@@ -73,7 +73,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="cedulaCliente" id="8DD0B9DF-F1A3-7E0C-1273-B8750415D4D4">
 <createdBy>Juan Diego</createdBy>
@@ -120,22 +120,6 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>8</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="cedulaCliente1" id="96714780-12C8-F7E7-6CBE-280F24EFBB34">
-<createdBy>Juan Diego</createdBy>
-<createdTime>2019-05-18 19:51:50 UTC</createdTime>
-<comment>Cedula del cliente</comment>
-<generatorID>ECDE8172-BE75-B365-81E4-DAACA2A71C68</generatorID>
-<ownerDesignName>Hole</ownerDesignName>
-<engineerTo>
-<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
-</engineerTo>
-<referedAttribute>73B4D4B7-39DB-D077-69F9-A8072B827C35</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

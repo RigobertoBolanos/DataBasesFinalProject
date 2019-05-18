@@ -43,7 +43,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="cedulaCliente" id="73B4D4B7-39DB-D077-69F9-A8072B827C35">
 <createdBy>Juan Diego</createdBy>
@@ -74,7 +74,6 @@
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>E0279201-D52F-0834-8CF6-5B47749D2771</attributeRef>
-<attributeRef>73B4D4B7-39DB-D077-69F9-A8072B827C35</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

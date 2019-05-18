@@ -87,7 +87,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="cedulaFuncionario" id="EE7BE655-B022-5F47-9030-036BA5E17059">
 <createdBy>1107521942</createdBy>
@@ -104,7 +104,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="tipoSolicitud" id="06A896DD-E394-26DD-EFF5-5FC2C68066BC">
 <createdBy>1107521942</createdBy>
@@ -133,23 +133,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>8</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="cedulaCliente1" id="C01A914C-0890-0BEC-C94C-4276C71D2929">
-<createdBy>Juan Diego</createdBy>
-<createdTime>2019-05-18 19:20:53 UTC</createdTime>
-<comment>Cedula del cliente</comment>
-<generatorID>D2A7C90C-0DA5-C746-8761-C3900ECE9DE0</generatorID>
-<ownerDesignName>Hole</ownerDesignName>
-<engineerTo>
-<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
-</engineerTo>
-<referedAttribute>73B4D4B7-39DB-D077-69F9-A8072B827C35</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

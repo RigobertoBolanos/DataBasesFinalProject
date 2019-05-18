@@ -1,9 +1,12 @@
 -- Generado por Oracle SQL Developer Data Modeler 18.4.0.339.1532
---   en:        2019-05-18 15:50:48 COT
+--   en:        2019-05-18 16:05:41 COT
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
-
-
+DROP TABLE CLIENTE CASCADE CONSTRAINTS;
+DROP TABLE PRODCLI CASCADE CONSTRAINTS;
+DROP TABLE CONSTANTES CASCADE CONSTRAINTS;
+DROP TABLE FUNCIONARIO CASCADE CONSTRAINTS;
+DROP TABLE SOLICITUD CASCADE CONSTRAINTS;
 
 CREATE TABLE cliente (
     cedulacliente     VARCHAR2(20) NOT NULL,
@@ -19,9 +22,7 @@ CREATE TABLE constantes (
     codigoconstante                 VARCHAR2(20) NOT NULL,
     nombreconstante                 VARCHAR2(20) NOT NULL,
     valor                           VARCHAR2(20) NOT NULL,
-    cedulacliente3                  VARCHAR2 
---  ERROR: VARCHAR2 size not specified 
-     NOT NULL,
+    cedulacliente3                  VARCHAR2(20) NOT NULL,
     solicitud_cedulacliente         VARCHAR2(20) NOT NULL,
     solicitud_cedulafuncionario     VARCHAR2(20) NOT NULL,
     prodcli_codigoproducto          NUMBER(8) NOT NULL,
@@ -58,9 +59,7 @@ ALTER TABLE funcionario ADD CONSTRAINT funcionario_pk PRIMARY KEY ( cedulafuncio
 
 CREATE TABLE prodcli (
     codigoproducto          NUMBER(8) NOT NULL,
-    cedulacliente2          VARCHAR2 
---  ERROR: VARCHAR2 size not specified 
-     NOT NULL,
+    cedulacliente2          VARCHAR2(20) NOT NULL,
     cliente_cedulacliente   VARCHAR2(20) NOT NULL
 );
 
@@ -178,5 +177,5 @@ ALTER TABLE solicitud
 -- ORDS ENABLE SCHEMA                       0
 -- ORDS ENABLE OBJECT                       0
 -- 
--- ERRORS                                   2
+-- ERRORS                                   0
 -- WARNINGS                                 0
