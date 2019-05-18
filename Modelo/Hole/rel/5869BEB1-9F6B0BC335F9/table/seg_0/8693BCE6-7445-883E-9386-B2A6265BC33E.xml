@@ -1,0 +1,185 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8693BCE6-7445-883E-9386-B2A6265BC33E" name="Constantes">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<generatorID>03DC7607-05D3-3A3F-2284-2D97B5CEA88A</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="codigoConstante" id="12ADFFFC-8D57-DA32-8ACB-A1F1AEB3810C">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<comment>Codigo que identifica a la constante</comment>
+<commentInRDBMS>Código del parámetro</commentInRDBMS>
+<generatorID>78E70CF3-F450-4617-3FF4-F76505E51052</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombreConstante" id="5B3B2206-99D2-B347-BF02-9CE48DC5B730">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<comment>Nombre de la constante</comment>
+<commentInRDBMS>Nombre de la constante</commentInRDBMS>
+<generatorID>0A64EE5A-2AA8-1EA7-5088-49C2C8265AFA</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valor" id="900EA833-6A09-0473-E5C8-3607E52FF6EF">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<comment>Valor de la constante</comment>
+<generatorID>85D7F054-0186-1867-48A5-2DC58A91BFEB</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cedulaCliente3" id="4FE3CD08-78FF-4102-771B-3F55AAE5EDD4">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<comment>Cedula del cliente</comment>
+<generatorID>C2F43508-4F7C-AB0F-5308-3FD0BF5A092D</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Solicitud_cedulaCliente" id="3DC68366-84BC-9EE4-B85C-FB45D914048D">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<comment>Cedula del cliente</comment>
+<generatorID>8DD0B9DF-F1A3-7E0C-1273-B8750415D4D4</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3D7FE384-653C-38FE-1C8B-4F911A16B039" referredColumn="4D30BEDD-DBF3-EAEE-0EED-8ED262D0DAA7"/>
+</associations>
+</Column>
+<Column name="Solicitud_cedulaFuncionario" id="03453818-85C5-3297-70ED-2E1B63166920">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<comment>Cédula del funcionario</comment>
+<generatorID>39DD1FB1-1386-A95F-DA93-E9EF90F64C7C</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3D7FE384-653C-38FE-1C8B-4F911A16B039" referredColumn="597CF855-68C7-263C-2A6B-3C53B0235D30"/>
+</associations>
+</Column>
+<Column name="ProdCli_codigoProducto" id="400D0EDD-B734-7291-CA4C-4E0FA4FE4EE9">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<generatorID>7BA4AC3D-B331-F847-5C0E-FD38425FE5BF</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="24B360E3-85B2-A81C-61DA-5AE91807DE3F" referredColumn="9AC3CF1B-9C2A-7122-812C-CF50FC8D263D"/>
+</associations>
+</Column>
+<Column name="ProdCli_Cliente_cedulaCliente" id="11D97FC5-4F5C-2AB9-C304-85A63BA8D17B">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<comment>Cedula del cliente</comment>
+<generatorID>96714780-12C8-F7E7-6CBE-280F24EFBB34</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="24B360E3-85B2-A81C-61DA-5AE91807DE3F" referredColumn="40DB17C2-7C54-AF83-A0DE-BB2DB34BB881"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ABE686DC-435A-A130-EB24-D6F9E90BCB8B" name="Constantes_PK">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<generatorID>E43EC9D9-777D-D120-9AA0-8D79C51D2ED7</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="12ADFFFC-8D57-DA32-8ACB-A1F1AEB3810C"/>
+<colUsage columnID="3DC68366-84BC-9EE4-B85C-FB45D914048D"/>
+<colUsage columnID="03453818-85C5-3297-70ED-2E1B63166920"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="82AD650C-0A6A-86A0-683F-E4564A25974F" name="Constantes__IDX">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<ownerDesignName>Hole</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>ECDE8172-BE75-B365-81E4-DAACA2A71C68</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="400D0EDD-B734-7291-CA4C-4E0FA4FE4EE9"/>
+<colUsage columnID="11D97FC5-4F5C-2AB9-C304-85A63BA8D17B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FAE8B204-881F-57C8-C924-6769D89767CC" name="Constantes_Solicitud_FK">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<generatorID>3D1BE08E-FB15-B9D2-48D5-04FE76A21FE2</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3DC68366-84BC-9EE4-B85C-FB45D914048D"/>
+<colUsage columnID="03453818-85C5-3297-70ED-2E1B63166920"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="81B06C3A-21DF-148D-EA91-C1C78A893D86" name="Constantes_ProdCli_FK">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<generatorID>ECDE8172-BE75-B365-81E4-DAACA2A71C68</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="400D0EDD-B734-7291-CA4C-4E0FA4FE4EE9"/>
+<colUsage columnID="11D97FC5-4F5C-2AB9-C304-85A63BA8D17B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

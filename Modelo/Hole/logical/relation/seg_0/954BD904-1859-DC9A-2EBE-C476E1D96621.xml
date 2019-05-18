@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="soliFun" directorySegmentName="seg_0" id="954BD904-1859-DC9A-2EBE-C476E1D96621">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 16:55:52 UTC</createdTime>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<sourcePk>C64B434E-A41D-5F46-F4C1-67DAFCE3BC9E</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>F07D8112-0EBE-961C-32E9-8C011E72DDCD</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>6B4BF003-2A85-F1B9-6A5C-A4388434E89C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

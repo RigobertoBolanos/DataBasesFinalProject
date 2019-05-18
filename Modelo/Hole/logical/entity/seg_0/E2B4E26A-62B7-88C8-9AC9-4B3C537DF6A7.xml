@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E2B4E26A-62B7-88C8-9AC9-4B3C537DF6A7" name="Cliente">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 16:22:37 UTC</createdTime>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cedulaCliente" id="1215C581-0742-4098-B199-B03A1D2827D7">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 16:22:45 UTC</createdTime>
+<comment>Cedula del cliente</comment>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="A63BEDFA-BB26-2BCC-D094-7CA15205BEC1">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 16:27:25 UTC</createdTime>
+<comment>Nombre del cliente</comment>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fechaNacimiento" id="624F9464-4F59-B7A9-1B4E-DA3F892D127B">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 16:27:43 UTC</createdTime>
+<comment>Fecha de nacimiento del cliente</comment>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="direccion" id="243235A8-E1A7-22AE-D079-E0339A3E1A03">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 16:28:20 UTC</createdTime>
+<comment>Dirección del cliente</comment>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="telefono" id="60F88432-AB85-5CC5-128E-E9360BC90684">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 16:28:49 UTC</createdTime>
+<comment>Telefono del cliente</comment>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<ownDataTypeParameters>12,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="DFB8BB2C-2F25-A862-1DB0-A9D91341A26A" name="Cliente PK">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 16:22:52 UTC</createdTime>
+<ownerDesignName>Hole</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1215C581-0742-4098-B199-B03A1D2827D7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

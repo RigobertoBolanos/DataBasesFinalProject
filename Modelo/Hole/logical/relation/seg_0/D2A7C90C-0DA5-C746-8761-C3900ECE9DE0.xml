@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="fechaAtención" directorySegmentName="seg_0" id="D2A7C90C-0DA5-C746-8761-C3900ECE9DE0">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 19:20:28 UTC</createdTime>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<sourcePk>A2647147-2015-18A9-ACEE-41BE43087CB9</sourcePk>
+<targetPk>FF682B7F-3980-E15B-BE1E-90B8D76E084D</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>6B4BF003-2A85-F1B9-6A5C-A4388434E89C</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>B8968877-E776-B6CA-3321-36000878AAEF</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

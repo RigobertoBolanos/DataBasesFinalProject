@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="tipoProd" directorySegmentName="seg_0" id="ECDE8172-BE75-B365-81E4-DAACA2A71C68">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 19:51:50 UTC</createdTime>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<sourcePk>FF682B7F-3980-E15B-BE1E-90B8D76E084D</sourcePk>
+<targetPk>E43EC9D9-777D-D120-9AA0-8D79C51D2ED7</targetPk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B8968877-E776-B6CA-3321-36000878AAEF</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>03DC7607-05D3-3A3F-2284-2D97B5CEA88A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

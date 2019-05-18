@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A4F293FF-BB21-547D-8F8F-ACE12C5369A6" name="ProdCli">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<generatorID>B8968877-E776-B6CA-3321-36000878AAEF</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="codigoProducto" id="9AC3CF1B-9C2A-7122-812C-CF50FC8D263D">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<commentInRDBMS>Codigo del producto</commentInRDBMS>
+<generatorID>E0279201-D52F-0834-8CF6-5B47749D2771</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cedulaCliente2" id="2CBC472C-381B-F1F1-6EBD-3011B5C2250A">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<comment>Cedula del cliente</comment>
+<generatorID>1DECBED5-D590-E5EE-4F74-AA7777BE586B</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cliente_cedulaCliente" id="40DB17C2-7C54-AF83-A0DE-BB2DB34BB881">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<comment>Cedula del cliente</comment>
+<generatorID>73B4D4B7-39DB-D077-69F9-A8072B827C35</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CB8D868B-1953-F66F-60D9-34F86486865D" referredColumn="EDD33911-3B4F-4959-1DE0-D55D567B4012"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F1BF638C-3FF3-33AC-1391-5982CCCCAE88" name="ProdCli_PK">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<generatorID>FF682B7F-3980-E15B-BE1E-90B8D76E084D</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9AC3CF1B-9C2A-7122-812C-CF50FC8D263D"/>
+<colUsage columnID="40DB17C2-7C54-AF83-A0DE-BB2DB34BB881"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="418A06B1-2247-9420-5C15-EDEA6504D56E" name="ProdCli_Cliente_FK">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<generatorID>E2FBB82A-FCEC-68FC-A52F-4279EC0DDB1E</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="40DB17C2-7C54-AF83-A0DE-BB2DB34BB881"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,158 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="03DC7607-05D3-3A3F-2284-2D97B5CEA88A" name="Constantes">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 17:38:48 UTC</createdTime>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="codigoConstante" id="78E70CF3-F450-4617-3FF4-F76505E51052">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 17:39:00 UTC</createdTime>
+<comment>Codigo que identifica a la constante</comment>
+<commentInRDBMS>Código del parámetro</commentInRDBMS>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombreConstante" id="0A64EE5A-2AA8-1EA7-5088-49C2C8265AFA">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 17:40:38 UTC</createdTime>
+<comment>Nombre de la constante</comment>
+<commentInRDBMS>Nombre de la constante</commentInRDBMS>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="valor" id="85D7F054-0186-1867-48A5-2DC58A91BFEB">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 17:42:40 UTC</createdTime>
+<comment>Valor de la constante</comment>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cedulaCliente3" id="C2F43508-4F7C-AB0F-5308-3FD0BF5A092D">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 18:00:47 UTC</createdTime>
+<comment>Cedula del cliente</comment>
+<generatorID>7C5FE997-CDD9-C597-7AE1-A404D97DBD0C</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<referedAttribute>7F14523E-48D0-E119-3CAA-B91F7402B19C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cedulaCliente" id="8DD0B9DF-F1A3-7E0C-1273-B8750415D4D4">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 19:29:59 UTC</createdTime>
+<comment>Cedula del cliente</comment>
+<generatorID>3D1BE08E-FB15-B9D2-48D5-04FE76A21FE2</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<referedAttribute>7F14523E-48D0-E119-3CAA-B91F7402B19C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cedulaFuncionario" id="39DD1FB1-1386-A95F-DA93-E9EF90F64C7C">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 19:48:28 UTC</createdTime>
+<comment>Cédula del funcionario</comment>
+<generatorID>3D1BE08E-FB15-B9D2-48D5-04FE76A21FE2</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<referedAttribute>EE7BE655-B022-5F47-9030-036BA5E17059</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codigoProducto" id="7BA4AC3D-B331-F847-5C0E-FD38425FE5BF">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 19:51:50 UTC</createdTime>
+<generatorID>ECDE8172-BE75-B365-81E4-DAACA2A71C68</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<referedAttribute>E0279201-D52F-0834-8CF6-5B47749D2771</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cedulaCliente1" id="96714780-12C8-F7E7-6CBE-280F24EFBB34">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-18 19:51:50 UTC</createdTime>
+<comment>Cedula del cliente</comment>
+<generatorID>ECDE8172-BE75-B365-81E4-DAACA2A71C68</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<referedAttribute>73B4D4B7-39DB-D077-69F9-A8072B827C35</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E43EC9D9-777D-D120-9AA0-8D79C51D2ED7" name="Constantes PK">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 17:40:04 UTC</createdTime>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>78E70CF3-F450-4617-3FF4-F76505E51052</attributeRef>
+<attributeRef>8DD0B9DF-F1A3-7E0C-1273-B8750415D4D4</attributeRef>
+<attributeRef>39DD1FB1-1386-A95F-DA93-E9EF90F64C7C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

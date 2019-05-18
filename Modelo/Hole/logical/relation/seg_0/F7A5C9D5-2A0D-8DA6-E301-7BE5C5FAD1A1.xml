@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="SoliCli" directorySegmentName="seg_0" id="F7A5C9D5-2A0D-8DA6-E301-7BE5C5FAD1A1">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 16:54:41 UTC</createdTime>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<sourcePk>DFB8BB2C-2F25-A862-1DB0-A9D91341A26A</sourcePk>
+<identifying>true</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E2B4E26A-62B7-88C8-9AC9-4B3C537DF6A7</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>6B4BF003-2A85-F1B9-6A5C-A4388434E89C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

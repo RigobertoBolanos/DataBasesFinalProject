@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F07D8112-0EBE-961C-32E9-8C011E72DDCD" name="Funcionario">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 16:23:47 UTC</createdTime>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cedulaFuncionario" id="58CA494C-CADE-70A2-CF83-0D5164FD1712">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 16:30:06 UTC</createdTime>
+<comment>Cédula del funcionario</comment>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="799E704D-6C46-E7A3-B478-53E4469AFB50">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 16:29:34 UTC</createdTime>
+<comment>Nombre del funcionario</comment>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fechaNacimiento" id="5FC625FF-AE63-F7B0-0515-B65F1C372974">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 16:31:36 UTC</createdTime>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="direccion" id="9F56BB42-1C80-F3F0-D301-B98CE65F03A1">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 16:31:55 UTC</createdTime>
+<comment>Direccion del funcionario</comment>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="telefono" id="430F4BDA-C116-F218-BBE5-C826A5C0F9B5">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 16:32:11 UTC</createdTime>
+<comment>Teléfono del funcionario</comment>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<ownDataTypeParameters>12,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C64B434E-A41D-5F46-F4C1-67DAFCE3BC9E" name="Funcionario PK">
+<createdBy>1107521942</createdBy>
+<createdTime>2019-05-13 16:30:29 UTC</createdTime>
+<ownerDesignName>Hole</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>58CA494C-CADE-70A2-CF83-0D5164FD1712</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
