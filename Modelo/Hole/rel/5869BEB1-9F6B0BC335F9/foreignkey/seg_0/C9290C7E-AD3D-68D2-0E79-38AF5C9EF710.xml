@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C9290C7E-AD3D-68D2-0E79-38AF5C9EF710" containerWithKeyObject="28561717-CF23-2D85-A254-315669A2D3F4" localFKIndex="5E2E7E22-AA52-0D99-DE95-3F0B51678FD4" name="ProdCli_Constantes_FK">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
+<generatorID>ECDE8172-BE75-B365-81E4-DAACA2A71C68</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<referredTableLongName>Constantes</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>C8A1687C-4FAF-11C3-A54F-4FB4EE783A08</referredTableID>
+<keyObject>1852A82D-82A3-C669-CE93-6A2E15D03601</keyObject>
+<referredKeyID>1852A82D-82A3-C669-CE93-6A2E15D03601</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>codigoConstante</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -29,22 +29,6 @@
 <dataTypePrecision>8</dataTypePrecision>
 <ownDataTypeParameters>,8,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cedulaCliente2" id="1DECBED5-D590-E5EE-4F74-AA7777BE586B">
-<createdBy>1107521942</createdBy>
-<createdTime>2019-05-13 17:58:36 UTC</createdTime>
-<comment>Cedula del cliente</comment>
-<generatorID>677E9D6B-13C7-9570-874A-FFAE54528E2B</generatorID>
-<ownerDesignName>Hole</ownerDesignName>
-<engineerTo>
-<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
-</engineerTo>
-<referedAttribute>7F14523E-48D0-E119-3CAA-B91F7402B19C</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="cedulaCliente" id="73B4D4B7-39DB-D077-69F9-A8072B827C35">
 <createdBy>Juan Diego</createdBy>
 <createdTime>2019-05-18 19:19:06 UTC</createdTime>
@@ -55,6 +39,22 @@
 <item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
 </engineerTo>
 <referedAttribute>1215C581-0742-4098-B199-B03A1D2827D7</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codigoConstante" id="93F99CDF-1A32-B9CE-530C-2CFC3B39E0E7">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-19 04:02:47 UTC</createdTime>
+<comment>Codigo que identifica a la constante</comment>
+<generatorID>ECDE8172-BE75-B365-81E4-DAACA2A71C68</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<engineerTo>
+<item key="5869BEB1-1029-4216-365C-9F6B0BC335F9" value="true"/>
+</engineerTo>
+<referedAttribute>78E70CF3-F450-4617-3FF4-F76505E51052</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -74,6 +74,7 @@
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>E0279201-D52F-0834-8CF6-5B47749D2771</attributeRef>
+<attributeRef>73B4D4B7-39DB-D077-69F9-A8072B827C35</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

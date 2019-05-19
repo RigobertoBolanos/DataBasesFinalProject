@@ -1,0 +1,67 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C8A1687C-4FAF-11C3-A54F-4FB4EE783A08" name="Constantes">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
+<generatorID>03DC7607-05D3-3A3F-2284-2D97B5CEA88A</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="codigoConstante" id="5429432E-A887-135A-41F3-CE65F4A8FCCD">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
+<comment>Codigo que identifica a la constante</comment>
+<commentInRDBMS>Código del parámetro</commentInRDBMS>
+<generatorID>78E70CF3-F450-4617-3FF4-F76505E51052</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombreConstante" id="395D0616-A885-C902-F5F1-F9533C9BE064">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
+<comment>Nombre de la constante</comment>
+<commentInRDBMS>Nombre de la constante</commentInRDBMS>
+<generatorID>0A64EE5A-2AA8-1EA7-5088-49C2C8265AFA</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valor" id="0B873C8E-D1FF-1919-BF89-716C34E724EC">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
+<comment>Valor de la constante</comment>
+<generatorID>85D7F054-0186-1867-48A5-2DC58A91BFEB</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1852A82D-82A3-C669-CE93-6A2E15D03601" name="Constantes_PK">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
+<generatorID>E43EC9D9-777D-D120-9AA0-8D79C51D2ED7</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5429432E-A887-135A-41F3-CE65F4A8FCCD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

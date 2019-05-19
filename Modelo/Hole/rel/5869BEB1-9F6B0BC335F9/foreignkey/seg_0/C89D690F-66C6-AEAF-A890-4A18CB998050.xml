@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C89D690F-66C6-AEAF-A890-4A18CB998050" containerWithKeyObject="D7CCF49A-74C1-9A7D-8B7B-AC138E746E7B" localFKIndex="F0F796E9-3323-5663-B7E8-73AECCD233B3" name="Solicitud_ProdCli_FK">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
+<generatorID>D2A7C90C-0DA5-C746-8761-C3900ECE9DE0</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<referredTableLongName>ProdCli</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>28561717-CF23-2D85-A254-315669A2D3F4</referredTableID>
+<keyObject>7EAF8F5A-95FF-6D97-FC7D-6BF71CB467A1</keyObject>
+<referredKeyID>7EAF8F5A-95FF-6D97-FC7D-6BF71CB467A1</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>codigoProducto,Cliente_cedulaCliente</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

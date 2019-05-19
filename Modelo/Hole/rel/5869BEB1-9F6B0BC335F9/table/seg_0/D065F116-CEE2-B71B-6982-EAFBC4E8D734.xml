@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8BE6C11B-C566-1C66-3B6B-D61EFEDB5391" name="Funcionario">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D065F116-CEE2-B71B-6982-EAFBC4E8D734" name="Funcionario">
 <createdBy>Juan Diego</createdBy>
-<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
 <generatorID>F07D8112-0EBE-961C-32E9-8C011E72DDCD</generatorID>
 <ownerDesignName>Hole</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="cedulaFuncionario" id="38A8D64A-13C6-972E-441F-2390130B8646">
+<Column name="cedulaFuncionario" id="E575BACC-A647-F307-25ED-6BFEF19CCB11">
 <createdBy>Juan Diego</createdBy>
-<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
 <comment>Cédula del funcionario</comment>
 <generatorID>58CA494C-CADE-70A2-CF83-0D5164FD1712</generatorID>
 <ownerDesignName>Hole</ownerDesignName>
@@ -21,9 +21,9 @@
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="nombre" id="D29DEB20-A5BD-77AC-C040-76DE8D44AD8B">
+<Column name="nombre" id="DD31964A-B7B3-CA17-781A-F81469A4328C">
 <createdBy>Juan Diego</createdBy>
-<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
 <comment>Nombre del funcionario</comment>
 <generatorID>799E704D-6C46-E7A3-B478-53E4469AFB50</generatorID>
 <ownerDesignName>Hole</ownerDesignName>
@@ -34,9 +34,9 @@
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="fechaNacimiento" id="FCE117AF-691E-6A90-BBD3-0C2721DA24F9">
+<Column name="fechaNacimiento" id="FD162F34-DEA3-3A48-ED11-53C44867DFAC">
 <createdBy>Juan Diego</createdBy>
-<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
 <generatorID>5FC625FF-AE63-F7B0-0515-B65F1C372974</generatorID>
 <ownerDesignName>Hole</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -45,9 +45,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="direccion" id="1C30E4B7-B0A8-B094-3548-4481ECA866B8">
+<Column name="direccion" id="523BC36A-AF78-556E-F72F-0CEE092E4457">
 <createdBy>Juan Diego</createdBy>
-<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
 <comment>Direccion del funcionario</comment>
 <generatorID>9F56BB42-1C80-F3F0-D301-B98CE65F03A1</generatorID>
 <ownerDesignName>Hole</ownerDesignName>
@@ -58,9 +58,9 @@
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="telefono" id="090589D0-34DB-38CA-199F-C4F8F828C7B3">
+<Column name="telefono" id="E4C43523-CC63-EA95-D509-45BF5BEAF398">
 <createdBy>Juan Diego</createdBy>
-<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
 <comment>Teléfono del funcionario</comment>
 <generatorID>430F4BDA-C116-F218-BBE5-C826A5C0F9B5</generatorID>
 <ownerDesignName>Hole</ownerDesignName>
@@ -73,16 +73,16 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="A2A9BC63-6482-26D1-71AC-E1D406B563F4" name="Funcionario_PK">
+<ind_PK_UK id="2CE1480A-63B5-E764-1DF0-CDB5B3B3CC83" name="Funcionario_PK">
 <createdBy>Juan Diego</createdBy>
-<createdTime>2019-05-18 20:29:45 UTC</createdTime>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
 <generatorID>C64B434E-A41D-5F46-F4C1-67DAFCE3BC9E</generatorID>
 <ownerDesignName>Hole</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="38A8D64A-13C6-972E-441F-2390130B8646"/>
+<colUsage columnID="E575BACC-A647-F307-25ED-6BFEF19CCB11"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

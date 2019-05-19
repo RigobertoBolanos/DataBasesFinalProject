@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="28561717-CF23-2D85-A254-315669A2D3F4" name="ProdCli">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
+<generatorID>B8968877-E776-B6CA-3321-36000878AAEF</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="codigoProducto" id="5202B4C6-23A4-ED47-1E55-F608E9235014">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
+<commentInRDBMS>Codigo del producto</commentInRDBMS>
+<generatorID>E0279201-D52F-0834-8CF6-5B47749D2771</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cliente_cedulaCliente" id="AF350979-89D3-C4A5-DD70-12B09EEE9885">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
+<comment>Cedula del cliente</comment>
+<generatorID>73B4D4B7-39DB-D077-69F9-A8072B827C35</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D935A4A2-3EF7-0252-2658-F868767099B0" referredColumn="15FCE7A6-43F5-C164-E872-0CF97E8B5FE2"/>
+</associations>
+</Column>
+<Column name="Constantes_codigoConstante" id="B3EF7DBE-2644-DE5A-5703-4504B78B2C77">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
+<comment>Codigo que identifica a la constante</comment>
+<generatorID>93F99CDF-1A32-B9CE-530C-2CFC3B39E0E7</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C9290C7E-AD3D-68D2-0E79-38AF5C9EF710" referredColumn="5429432E-A887-135A-41F3-CE65F4A8FCCD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7EAF8F5A-95FF-6D97-FC7D-6BF71CB467A1" name="ProdCli_PK">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
+<generatorID>FF682B7F-3980-E15B-BE1E-90B8D76E084D</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5202B4C6-23A4-ED47-1E55-F608E9235014"/>
+<colUsage columnID="AF350979-89D3-C4A5-DD70-12B09EEE9885"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="67F6C215-B3B9-FDB1-1A97-8B3177E708E6" name="ProdCli__IDX">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
+<ownerDesignName>Hole</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>ECDE8172-BE75-B365-81E4-DAACA2A71C68</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="B3EF7DBE-2644-DE5A-5703-4504B78B2C77"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BEC1D8A4-3548-73B6-978A-C294EE2844BE" name="ProdCli_Cliente_FK">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
+<generatorID>E2FBB82A-FCEC-68FC-A52F-4279EC0DDB1E</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AF350979-89D3-C4A5-DD70-12B09EEE9885"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5E2E7E22-AA52-0D99-DE95-3F0B51678FD4" name="ProdCli_Constantes_FK">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-19 04:08:25 UTC</createdTime>
+<generatorID>ECDE8172-BE75-B365-81E4-DAACA2A71C68</generatorID>
+<ownerDesignName>Hole</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B3EF7DBE-2644-DE5A-5703-4504B78B2C77"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
