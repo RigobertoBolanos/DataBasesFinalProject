@@ -27,7 +27,7 @@ END pEliminarCliente;
 -- Implementación Procedimiento 3
 PROCEDURE pModificarCliente(cedulaCli VARCHAR2, nombreCli VARCHAR2, fechaNacimientoCli DATE, direccionCli VARCHAR2, telefonoCli VARCHAR2) IS
 BEGIN
-    UPDATE Cliente SET nombre=nombreCli,fechaNacimiento=fechaNacimientoCli,direccion=direccionCli,telefono=telefonoCli
+    UPDATE Cliente SET Cliente.nombre=nombreCli,Cliente.fechaNacimiento=fechaNacimientoCli,Cliente.direccion=direccionCli, Cliente.telefono=telefonoCli
     WHERE cliente.cedula=cedulaCli;
 END pModificarCliente;
 
