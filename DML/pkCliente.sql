@@ -8,7 +8,7 @@ END pkEmpleados;
 
 CREATE OR REPLACE PACKAGE BODY pkCliente AS -- body
 
--- Implementaci髇 Procedimiento 1
+-- Implementaci贸n Procedimiento 1
 PROCEDURE pInsertarCliente
 (cedula VARCHAR2, nombre VARCHAR2, fechaNacimiento DATE, direccion VARCHAR2, telefono VARCHAR2)
 IS
@@ -18,20 +18,20 @@ BEGIN
     telefono);
 END pInsertarCliente;
 
--- Implementaci髇 Procedimiento 2
+-- Implementaci贸n Procedimiento 2
 PROCEDURE pEliminarCliente(cedulaCli VARCHAR2) IS
 BEGIN
-    DELETE FROM Cliente WHERE cedula = cedulaCli;
+    DELETE FROM Cliente WHERE Cliente.cedula = cedulaCli;
 END pEliminarCliente;
 
--- Implementaci髇 Procedimiento 3
+-- Implementaci贸n Procedimiento 3
 PROCEDURE pModificarCliente(cedulaCli VARCHAR2, nombreCli VARCHAR2, fechaNacimientoCli DATE, direccionCli VARCHAR2, telefonoCli VARCHAR2) IS
 BEGIN
     UPDATE Cliente SET nombre=nombreCli,fechaNacimiento=fechaNacimientoCli,direccion=direccionCli,telefono=telefonoCli
-    WHERE cedula=cedulaCli;
+    WHERE cliente.cedula=cedulaCli;
 END pModificarCliente;
 
--- Implementaci髇 Procedimiento 4
+-- Implementaci贸n Procedimiento 4
 FUNCTION fConsultarCliente(cedulaCli VARCHAR2) return VARCHAR2 IS
 vLista varchar2(100);
 CURSOR cClienteSolicitado IS
