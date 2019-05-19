@@ -15,12 +15,9 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="0913CE5D-161E-B1BD-E544-E25C56FAF9CB" referredColumn="7AF3BBF0-B5A0-CD08-FC9B-C51B6E81D6E9"/>
-</associations>
 </Column>
 <Column name="Solicitud_cedulaFuncionario" id="A9C4F18B-6E55-0880-B051-5D9C9D66CFEA">
 <createdBy>Juan Diego</createdBy>
@@ -30,12 +27,9 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="0913CE5D-161E-B1BD-E544-E25C56FAF9CB" referredColumn="89D1DBF9-723B-5E20-FCFE-4D210215A679"/>
-</associations>
 </Column>
 <Column name="Constantes_codigoConstante" id="98FC9216-B134-C36C-DBD9-904F8D6B354F">
 <createdBy>Juan Diego</createdBy>
@@ -45,11 +39,26 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="4F1875C7-8935-1000-8066-010E19D03C4F" referredColumn="5429432E-A887-135A-41F3-CE65F4A8FCCD"/>
+</associations>
+</Column>
+<Column name="Solicitud_IdSolicitud" id="BB1EAC2F-6E54-2AC8-0BC6-18D864AF475F">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-19 18:39:56 UTC</createdTime>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0913CE5D-161E-B1BD-E544-E25C56FAF9CB" referredColumn="F1AE99FB-0524-252D-11BC-BFCB3932AC3B"/>
 </associations>
 </Column>
 </columns>
@@ -75,8 +84,7 @@
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="09DC2334-D2FE-C011-1E36-B23772BFE127"/>
-<colUsage columnID="A9C4F18B-6E55-0880-B051-5D9C9D66CFEA"/>
+<colUsage columnID="BB1EAC2F-6E54-2AC8-0BC6-18D864AF475F"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="8186739D-6A80-3E71-49EA-60D7058D5E4E" name="consSoli_Constantes_FK">

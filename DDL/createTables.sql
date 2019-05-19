@@ -1,12 +1,9 @@
 -- Generado por Oracle SQL Developer Data Modeler 18.4.0.339.1532
---   en:        2019-05-18 23:11:08 COT
+--   en:        2019-05-19 13:40:25 COT
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
-DROP TABLE CLIENTE CASCADE CONSTRAINTS;
-DROP TABLE CONSTANTES CASCADE CONSTRAINTS;
-DROP TABLE FUNCIONARIO CASCADE CONSTRAINTS;
-DROP TABLE PRODCLI CASCADE CONSTRAINTS;
-DROP TABLE SOLICITUD CASCADE CONSTRAINTS;
+
+
 
 CREATE TABLE cliente (
     cedulacliente     VARCHAR2(20) NOT NULL,
@@ -21,7 +18,8 @@ ALTER TABLE cliente ADD CONSTRAINT cliente_pk PRIMARY KEY ( cedulacliente );
 CREATE TABLE conssoli (
     solicitud_cedulacliente       VARCHAR2(20) NOT NULL,
     solicitud_cedulafuncionario   VARCHAR2(20) NOT NULL,
-    constantes_codigoconstante    VARCHAR2(20) NOT NULL
+    constantes_codigoconstante    VARCHAR2(20) NOT NULL,
+    solicitud_idsolicitud         VARCHAR2(8) NOT NULL
 );
 
 ALTER TABLE conssoli
@@ -79,7 +77,8 @@ CREATE TABLE solicitud (
     funcionario_cedulafuncionario   VARCHAR2(20) NOT NULL,
     tiposolicitud                   VARCHAR2(20) NOT NULL,
     prodcli_codigoproducto          NUMBER(8) NOT NULL,
-    prodcli_cedulacliente           VARCHAR2(20) NOT NULL
+    prodcli_cedulacliente           VARCHAR2(20) NOT NULL,
+    idsolicitud                     VARCHAR2(8) NOT NULL
 );
 
 COMMENT ON COLUMN solicitud.fechacreacion IS
@@ -103,18 +102,15 @@ COMMENT ON COLUMN solicitud.funcionario_cedulafuncionario IS
 COMMENT ON COLUMN solicitud.tiposolicitud IS
     'Tipo de solicitud';
 
-ALTER TABLE solicitud ADD CONSTRAINT solicitud_pk PRIMARY KEY ( cliente_cedulacliente,
-                                                                funcionario_cedulafuncionario );
+ALTER TABLE solicitud ADD CONSTRAINT solicitud_pk PRIMARY KEY ( idsolicitud );
 
 ALTER TABLE conssoli
     ADD CONSTRAINT conssoli_constantes_fk FOREIGN KEY ( constantes_codigoconstante )
         REFERENCES constantes ( codigoconstante );
 
 ALTER TABLE conssoli
-    ADD CONSTRAINT conssoli_solicitud_fk FOREIGN KEY ( solicitud_cedulacliente,
-                                                       solicitud_cedulafuncionario )
-        REFERENCES solicitud ( cliente_cedulacliente,
-                               funcionario_cedulafuncionario );
+    ADD CONSTRAINT conssoli_solicitud_fk FOREIGN KEY ( solicitud_idsolicitud )
+        REFERENCES solicitud ( idsolicitud );
 
 ALTER TABLE prodcli
     ADD CONSTRAINT prodcli_cliente_fk FOREIGN KEY ( cliente_cedulacliente )

@@ -143,6 +143,17 @@
 <colAssociation fkAssociation="C89D690F-66C6-AEAF-A890-4A18CB998050" referredColumn="AF350979-89D3-C4A5-DD70-12B09EEE9885"/>
 </associations>
 </Column>
+<Column name="IdSolicitud" id="F1AE99FB-0524-252D-11BC-BFCB3932AC3B">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-19 18:39:56 UTC</createdTime>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="C57664BC-A1C9-F95F-BC08-C862B7738BB0" name="Solicitud_PK">
@@ -154,8 +165,7 @@
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="7AF3BBF0-B5A0-CD08-FC9B-C51B6E81D6E9"/>
-<colUsage columnID="89D1DBF9-723B-5E20-FCFE-4D210215A679"/>
+<colUsage columnID="F1AE99FB-0524-252D-11BC-BFCB3932AC3B"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="F0F796E9-3323-5663-B7E8-73AECCD233B3" name="Solicitud_ProdCli_FK">
