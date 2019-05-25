@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 18.4.0.339.1532
---   en:        2019-05-25 16:45:39 COT
+--   en:        2019-05-25 17:12:40 COT
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
@@ -47,9 +47,7 @@ ALTER TABLE funcionario ADD CONSTRAINT funcionario_pk PRIMARY KEY ( cedulafuncio
 CREATE TABLE prodcli (
     codigoproducto               NUMBER(8) NOT NULL,
     cliente_cedulacliente        VARCHAR2(20) NOT NULL,
-    constantes_codigoconstante   VARCHAR2(2) NOT NULL,
-    fecha_inicio                 DATE NULL,
-    fecha_retiro                 DATE NULL
+    constantes_codigoconstante   VARCHAR2(2) NOT NULL
 );
 
 COMMENT ON COLUMN prodcli.codigoproducto IS
@@ -63,7 +61,7 @@ CREATE TABLE solicitud (
     observaciones                   VARCHAR2(140),
     estado                          VARCHAR2(15) NOT NULL,
     cliente_cedulacliente           VARCHAR2(20) NOT NULL,
-    funcionario_cedulafuncionario   VARCHAR2(20) NOT NULL,
+    funcionario_cedulafuncionario   VARCHAR2(20),
     tiposolicitud                   VARCHAR2(20) NOT NULL,
     prodcli_codigoproducto          NUMBER(8),
     idsolicitud                     VARCHAR2(8) NOT NULL
@@ -82,7 +80,7 @@ COMMENT ON COLUMN solicitud.estado IS
     'Estado de la solicitud, pueden ser: ASIGNADO, PENDIENTE, ATENDIDO.';
 
 COMMENT ON COLUMN solicitud.cliente_cedulacliente IS
-    'Cedula del cliente que realizÃ³ la solicitud';
+    'Cedula del cliente que realizó la solicitud';
 
 COMMENT ON COLUMN solicitud.funcionario_cedulafuncionario IS
     'Cedula del funcionario al que se asigno la solicitud';
