@@ -11,7 +11,7 @@ CREATE OR REPLACE PACKAGE BODY pkProductoCliente AS
 PROCEDURE pInsertar(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2, ivConstantes_codigoconstante VARCHAR2)
 IS 
 BEGIN
-    INSERT INTO PRODCLI VALUES (ivCodigoProducto, ivCliente_cedulacliente, ivConstantes_codigoconstante);
+    INSERT INTO PRODCLI VALUES (ivCodigoProducto, ivCliente_cedulacliente, ivConstantes_codigoconstante, SYSDATE, NULL);
 END pInsertar;
 
 PROCEDURE pBorrar(ivCodigoProducto NUMBER)
@@ -35,12 +35,13 @@ CURSOR cuProductoClienteBuscado IS
 ovCodigoProductoCliente NUMBER(8);
 ovCliente_cedulacliente VARCHAR2(20);
 ovConstantes_codigoconstante VARCHAR2(20);
+ovFechaInicio DATE;
 BEGIN
     OPEN cuProductoClienteBuscado;
-    FETCH cuProductoClienteBuscado INTO ovCodigoProductoCliente, ovCliente_cedulacliente, ovConstantes_codigoconstante;
+    FETCH cuProductoClienteBuscado INTO ovCodigoProductoCliente, ovCliente_cedulacliente, ovConstantes_codigoconstante, ovFechaInicio;
     CLOSE cuProductoClienteBuscado;
     
-    RETURN ovCodigoProductoCliente || ' ' || ovCliente_cedulacliente || ' ' || ovConstantes_codigoconstante;
+    RETURN ovCodigoProductoCliente || ' ' || ovCliente_cedulacliente || ' ' || ovConstantes_codigoconstante || ' ' || TO_CHAR(ovFechaInicio);
 END fConsultar;
 
 END pkProductoCliente;
