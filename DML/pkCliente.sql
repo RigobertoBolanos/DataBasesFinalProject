@@ -39,19 +39,19 @@ CURSOR cuClienteSolicitado IS
     FROM Cliente 
     WHERE Cliente.cedulaCliente= ivCedula;
     
-vCedulaCliente VARCHAR2(20);
-vNombre VARCHAR2(30);
-vFechaNacimiento DATE;
-vDireccion VARCHAR2(30);
-vTelefono VARCHAR2(12);
+ovCedulaCliente VARCHAR2(20);
+ovNombre VARCHAR2(30);
+ovFechaNacimiento DATE;
+ovDireccion VARCHAR2(30);
+ovTelefono VARCHAR2(12);
 
 BEGIN
   
     OPEN cuClienteSolicitado;
-    FETCH cuClienteSolicitado INTO vCedulaCliente, vNombre, vFechaNacimiento, vDireccion, vTelefono;
+    FETCH cuClienteSolicitado INTO ovCedulaCliente, ovNombre, ovFechaNacimiento, ovDireccion, ovTelefono;
     CLOSE cuClienteSolicitado;
     
-    RETURN vCedulaCliente || ' ' || vNombre || ' ' || TO_CHAR(vFechaNacimiento) || ' ' || vDireccion || ' ' || vTelefono;
+    RETURN ovCedulaCliente || ' ' || ovNombre || ' ' || TO_CHAR(ovFechaNacimiento) || ' ' || ovDireccion || ' ' || ovTelefono;
     
 END fConsultar;
 
