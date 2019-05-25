@@ -3,7 +3,12 @@
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
-
+DROP TABLE CLIENTE CASCADE CONSTRAINTS;
+DROP TABLE CONSSOLI CASCADE CONSTRAINTS;
+DROP TABLE CONSTANTES CASCADE CONSTRAINTS;
+DROP TABLE FUNCIONARIO CASCADE CONSTRAINTS;
+DROP TABLE PRODCLI CASCADE CONSTRAINTS;
+DROP TABLE SOLICITUD CASCADE CONSTRAINTS;
 
 CREATE TABLE cliente (
     cedulacliente     VARCHAR2(20) NOT NULL,
@@ -81,7 +86,7 @@ COMMENT ON COLUMN solicitud.estado IS
     'Estado de la solicitud, pueden ser: ASIGNADO, PENDIENTE, ATENDIDO.';
 
 COMMENT ON COLUMN solicitud.cliente_cedulacliente IS
-    'Cedula del cliente que realizó la solicitud';
+    'Cedula del cliente que realizÃ³ la solicitud';
 
 COMMENT ON COLUMN solicitud.funcionario_cedulafuncionario IS
     'Cedula del funcionario al que se asigno la solicitud';
