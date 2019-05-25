@@ -55,7 +55,7 @@ BEGIN
     then
     RETURN ovCedulaCliente || ' ' || ovNombre || ' ' || TO_CHAR(ovFechaNacimiento) || ' ' || ovDireccion || ' ' || ovTelefono;
     else
-    RETURN 'El registro con cédula ' || ivCedula || 'no existe en la tabla CLIENTE';
+    RETURN null;
     END IF;
 END fConsultar;
 
