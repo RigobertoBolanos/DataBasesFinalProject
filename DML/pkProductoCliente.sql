@@ -14,24 +14,24 @@ BEGIN
     INSERT INTO PRODCLI VALUES (ivCodigoProducto, ivCliente_cedulacliente, ivConstantes_codigoconstante);
 END pInsertar;
 
-PROCEDURE pBorrar(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2)
+PROCEDURE pBorrar(ivCodigoProducto NUMBER)
 IS
 BEGIN
-    DELETE FROM PRODCLI WHERE PRODCLI.codigoProducto = ivCodigoProducto AND PRODCLI.cliente_cedulacliente = ivCliente_cedulacliente;
+    DELETE FROM PRODCLI WHERE PRODCLI.codigoProducto = ivCodigoProducto;
 END pBorrar;
 
 PROCEDURE pModificar(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2, ivConstantes_codigoconstante VARCHAR2)
 IS
 BEGIN 
-    UPDATE PRODCLI SET PRODCLI.constantes_nombreconstante = ivConstantes_codigoconstante WHERE PRODCLI.codigoProducto = ivCodigoProducto AND PRODCLI.cliente_cedulacliente = ivCliente_cedulacliente;  
+    UPDATE PRODCLI SET PRODCLI.constantes_nombreconstante = ivConstantes_codigoconstante WHERE PRODCLI.codigoProducto = ivCodigoProducto;  
 END pModificar;
 
-FUNCTION fConsultar(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2) RETURN VARCHAR2
+FUNCTION fConsultar(ivCodigoProducto NUMBER) RETURN VARCHAR2
 IS
 CURSOR cuProductoClienteBuscado IS 
     SELECT *
     FROM PRODCLI 
-    WHERE PRODCLI.codigoProducto = ivCodigoProducto AND PRODCLI.cliente_cedulacliente = ivCliente_cedulacliente;
+    WHERE PRODCLI.codigoProducto = ivCodigoProducto;
 ovCodigoProductoCliente NUMBER(8);
 ovCliente_cedulacliente VARCHAR2(20);
 ovConstantes_codigoconstante VARCHAR2(20);

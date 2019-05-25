@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 18.4.0.339.1532
---   en:        2019-05-25 16:20:06 COT
+--   en:        2019-05-25 16:45:39 COT
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
@@ -53,8 +53,7 @@ CREATE TABLE prodcli (
 COMMENT ON COLUMN prodcli.codigoproducto IS
     'Codigo del producto';
 
-ALTER TABLE prodcli ADD CONSTRAINT prodcli_pk PRIMARY KEY ( codigoproducto,
-                                                            cliente_cedulacliente );
+ALTER TABLE prodcli ADD CONSTRAINT prodcli_pk PRIMARY KEY ( codigoproducto );
 
 CREATE TABLE solicitud (
     fechacreacion                   DATE NOT NULL,
@@ -65,7 +64,6 @@ CREATE TABLE solicitud (
     funcionario_cedulafuncionario   VARCHAR2(20) NOT NULL,
     tiposolicitud                   VARCHAR2(20) NOT NULL,
     prodcli_codigoproducto          NUMBER(8),
-    prodcli_cedulacliente           VARCHAR2(20),
     idsolicitud                     VARCHAR2(8) NOT NULL
 );
 
@@ -117,10 +115,8 @@ ALTER TABLE solicitud
         REFERENCES funcionario ( cedulafuncionario );
 
 ALTER TABLE solicitud
-    ADD CONSTRAINT solicitud_prodcli_fk FOREIGN KEY ( prodcli_codigoproducto,
-                                                      prodcli_cedulacliente )
-        REFERENCES prodcli ( codigoproducto,
-                             cliente_cedulacliente );
+    ADD CONSTRAINT solicitud_prodcli_fk FOREIGN KEY ( prodcli_codigoproducto )
+        REFERENCES prodcli ( codigoproducto );
 
 
 
