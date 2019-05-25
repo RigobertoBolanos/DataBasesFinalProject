@@ -28,16 +28,16 @@ END pModificar;
 
 FUNCTION fConsultar(ivNombreConstante VARCHAR2) RETURN VARCHAR2
 IS
-CURSOR constanteBuscada IS 
+CURSOR cuConstanteBuscada IS 
     SELECT *
     FROM CONSTANTES 
     WHERE CONSTANTES.nombreConstante = ivNombreConstante;
 ovNombreConstante VARCHAR2(20);
 ovValor VARCHAR2(20);
 BEGIN
-    OPEN constanteBuscada;
-    FETCH constanteBuscada INTO ovNombreConstante, ovValor;
-    CLOSE productoClienteBuscado;
+    OPEN cuConstanteBuscada;
+    FETCH cuConstanteBuscada INTO ovNombreConstante, ovValor;
+    CLOSE cuConstanteBuscada;
     
     RETURN ovNombreConstante || ' ' || ovValor;
 END fConsultar;
