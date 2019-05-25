@@ -33,14 +33,14 @@ CURSOR cuProductoClienteBuscado IS
     FROM PRODCLI 
     WHERE PRODCLI.codigoProducto = ivCodigoProducto AND PRODCLI.cliente_cedulacliente = ivCliente_cedulacliente;
 ovCodigoProductoCliente NUMBER(8);
-ovCliente_cedulaclienteV VARCHAR2(20);
+ovCliente_cedulacliente VARCHAR2(20);
 ovConstantes_codigoconstante VARCHAR2(20);
 BEGIN
     OPEN cuProductoClienteBuscado;
-    FETCH cuProductoClienteBuscado INTO ovCodigoProductoCliente, ovCliente_cedulaclienteV, ovConstantes_codigoconstante;
+    FETCH cuProductoClienteBuscado INTO ovCodigoProductoCliente, ovCliente_cedulacliente, ovConstantes_codigoconstante;
     CLOSE cuProductoClienteBuscado;
     
-    RETURN ovCodigoProductoCliente || ' ' || ovCliente_cedulaclienteV || ' ' || ovConstantes_codigoconstante;
+    RETURN ovCodigoProductoCliente || ' ' || ovCliente_cedulacliente || ' ' || ovConstantes_codigoconstante;
 END fConsultar;
 
 END pkProductoCliente;
