@@ -3,7 +3,7 @@ PROCEDURE pInsertarCliente(cedula VARCHAR2, nombre VARCHAR2, fechaNacimiento DAT
 PROCEDURE pEliminarCliente (cedula VARCHAR2);
 PROCEDURE pModificarCliente(nombre VARCHAR2, cedula VARCHAR2, fechaNacimiento DATE, direccion VARCHAR2, telefono VARCHAR2);
 FUNCTION fConsultarCliente(cedula VARCHAR2) RETURN VARCHAR2;
-END pkEmpleados;
+END pkCliente;
 /
 
 CREATE OR REPLACE PACKAGE BODY pkCliente AS -- body
@@ -19,27 +19,27 @@ BEGIN
 END pInsertarCliente;
 
 -- Implementación Procedimiento 2
-PROCEDURE pEliminarCliente(cedulaCli VARCHAR2) IS
+PROCEDURE pEliminarCliente(cedula VARCHAR2) IS
 BEGIN
-    DELETE FROM Cliente WHERE Cliente.cedula = cedulaCli;
+    DELETE FROM Cliente WHERE Cliente.cedulaCliente = cedula;
 END pEliminarCliente;
 
 -- Implementación Procedimiento 3
-PROCEDURE pModificarCliente(cedulaCli VARCHAR2, nombreCli VARCHAR2, fechaNacimientoCli DATE, direccionCli VARCHAR2, telefonoCli VARCHAR2) IS
+PROCEDURE pModificarCliente(nombre VARCHAR2, cedula VARCHAR2, fechaNacimiento DATE, direccion VARCHAR2, telefono VARCHAR2) IS
 BEGIN
-    UPDATE Cliente SET Cliente.nombre=nombreCli,Cliente.fechaNacimiento=fechaNacimientoCli,Cliente.direccion=direccionCli, Cliente.telefono=telefonoCli
-    WHERE cliente.cedula=cedulaCli;
+    UPDATE Cliente SET Cliente.nombre=nombre,Cliente.fechaNacimiento=fechaNacimiento,Cliente.direccion=direccion, Cliente.telefono=telefono
+    WHERE Cliente.cedulaCliente=cedula;
 END pModificarCliente;
 
 -- Implementación Procedimiento 4
-FUNCTION fConsultarCliente(cedulaCli VARCHAR2) return VARCHAR2 IS
-vLista varchar2(100);
+FUNCTION fConsultarCliente(cedula VARCHAR2) RETURN VARCHAR2
+IS
 CURSOR cClienteSolicitado IS
     SELECT *
     FROM Cliente 
-    WHERE Cliente.cedula=cedulaCli;
+    WHERE Cliente.cedulaCliente=cedula;
     
-cedula VARCHAR2(20);
+cedulaCliente VARCHAR2(20);
 nombre VARCHAR2(30);
 fechaNacimiento DATE;
 direccion VARCHAR2(30);
@@ -48,10 +48,10 @@ telefono VARCHAR2(12);
 BEGIN
   
     OPEN cClienteSolicitado;
-    FETCH cClienteSolicitado INTO cedula, nombre, fechaNacimiento, direccion, telefono;
+    FETCH cClienteSolicitado INTO cedulaCliente, nombre, fechaNacimiento, direccion, telefono;
     CLOSE cClienteSolicitado;
     
-    RETURN cedula || ' ' || nombre || ' ' || TO_CHAR(fechaNacimiento) || ' ' || direccion || ' ' || telefono;
+    RETURN cedulaCliente || ' ' || nombre || ' ' || TO_CHAR(fechaNacimiento) || ' ' || direccion || ' ' || telefono;
     
 END fConsultarCliente;
 
