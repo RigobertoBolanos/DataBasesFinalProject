@@ -47,7 +47,9 @@ ALTER TABLE funcionario ADD CONSTRAINT funcionario_pk PRIMARY KEY ( cedulafuncio
 CREATE TABLE prodcli (
     codigoproducto               NUMBER(8) NOT NULL,
     cliente_cedulacliente        VARCHAR2(20) NOT NULL,
-    constantes_codigoconstante   VARCHAR2(2) NOT NULL
+    constantes_codigoconstante   VARCHAR2(2) NOT NULL,
+    fecha_inicio                 DATE NULL,
+    fecha_retiro                 DATE NULL
 );
 
 COMMENT ON COLUMN prodcli.codigoproducto IS
@@ -80,7 +82,7 @@ COMMENT ON COLUMN solicitud.estado IS
     'Estado de la solicitud, pueden ser: ASIGNADO, PENDIENTE, ATENDIDO.';
 
 COMMENT ON COLUMN solicitud.cliente_cedulacliente IS
-    'Cedula del cliente que realizó la solicitud';
+    'Cedula del cliente que realizÃ³ la solicitud';
 
 COMMENT ON COLUMN solicitud.funcionario_cedulafuncionario IS
     'Cedula del funcionario al que se asigno la solicitud';
