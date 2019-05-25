@@ -115,6 +115,7 @@
 <createdTime>2019-05-19 04:08:25 UTC</createdTime>
 <generatorID>50898C47-F534-150A-5401-0BB48DD7BE3C</generatorID>
 <ownerDesignName>Hole</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -132,6 +133,7 @@
 <comment>Cedula del cliente</comment>
 <generatorID>40646C7D-BF42-CF00-3CFC-EFCA3770F2BE</generatorID>
 <ownerDesignName>Hole</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>

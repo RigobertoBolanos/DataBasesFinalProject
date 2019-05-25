@@ -11,6 +11,7 @@
 <Column name="codigoProducto" id="5202B4C6-23A4-ED47-1E55-F608E9235014">
 <createdBy>Juan Diego</createdBy>
 <createdTime>2019-05-19 04:08:25 UTC</createdTime>
+<comment>Codigo que identifica al producto</comment>
 <commentInRDBMS>Codigo del producto</commentInRDBMS>
 <generatorID>E0279201-D52F-0834-8CF6-5B47749D2771</generatorID>
 <ownerDesignName>Hole</ownerDesignName>
@@ -38,11 +39,10 @@
 <colAssociation fkAssociation="D935A4A2-3EF7-0252-2658-F868767099B0" referredColumn="15FCE7A6-43F5-C164-E872-0CF97E8B5FE2"/>
 </associations>
 </Column>
-<Column name="Constantes_codigoConstante" id="B3EF7DBE-2644-DE5A-5703-4504B78B2C77">
+<Column name="Constantes_nombreConstante" id="2727ABBB-4DE8-F50A-4429-6CC4AC94FAA8">
 <createdBy>Juan Diego</createdBy>
-<createdTime>2019-05-19 04:08:25 UTC</createdTime>
-<comment>Codigo que identifica a la constante</comment>
-<generatorID>93F99CDF-1A32-B9CE-530C-2CFC3B39E0E7</generatorID>
+<createdTime>2019-05-25 17:31:14 UTC</createdTime>
+<comment>Tipo de servicio del producto</comment>
 <ownerDesignName>Hole</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -52,7 +52,7 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="C9290C7E-AD3D-68D2-0E79-38AF5C9EF710" referredColumn="5429432E-A887-135A-41F3-CE65F4A8FCCD"/>
+<colAssociation fkAssociation="C9290C7E-AD3D-68D2-0E79-38AF5C9EF710" referredColumn="395D0616-A885-C902-F5F1-F9533C9BE064"/>
 </associations>
 </Column>
 </columns>
@@ -68,17 +68,6 @@
 <indexColumnUsage>
 <colUsage columnID="5202B4C6-23A4-ED47-1E55-F608E9235014"/>
 <colUsage columnID="AF350979-89D3-C4A5-DD70-12B09EEE9885"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="67F6C215-B3B9-FDB1-1A97-8B3177E708E6" name="ProdCli__IDX">
-<createdBy>Juan Diego</createdBy>
-<createdTime>2019-05-19 04:08:25 UTC</createdTime>
-<ownerDesignName>Hole</ownerDesignName>
-<indexState>Unique Plain Index</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<relationGeneratorID>ECDE8172-BE75-B365-81E4-DAACA2A71C68</relationGeneratorID>
-<indexColumnUsage>
-<colUsage columnID="B3EF7DBE-2644-DE5A-5703-4504B78B2C77"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="BEC1D8A4-3548-73B6-978A-C294EE2844BE" name="ProdCli_Cliente_FK">
@@ -100,7 +89,7 @@
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="B3EF7DBE-2644-DE5A-5703-4504B78B2C77"/>
+<colUsage columnID="2727ABBB-4DE8-F50A-4429-6CC4AC94FAA8"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

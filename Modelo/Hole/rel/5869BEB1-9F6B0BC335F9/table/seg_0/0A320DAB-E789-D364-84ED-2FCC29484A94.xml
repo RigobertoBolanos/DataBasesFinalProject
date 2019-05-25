@@ -31,21 +31,6 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Constantes_codigoConstante" id="98FC9216-B134-C36C-DBD9-904F8D6B354F">
-<createdBy>Juan Diego</createdBy>
-<createdTime>2019-05-19 04:08:25 UTC</createdTime>
-<ownerDesignName>Hole</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="4F1875C7-8935-1000-8066-010E19D03C4F" referredColumn="5429432E-A887-135A-41F3-CE65F4A8FCCD"/>
-</associations>
-</Column>
 <Column name="Solicitud_IdSolicitud" id="BB1EAC2F-6E54-2AC8-0BC6-18D864AF475F">
 <createdBy>Juan Diego</createdBy>
 <createdTime>2019-05-19 18:39:56 UTC</createdTime>
@@ -61,6 +46,21 @@
 <colAssociation fkAssociation="0913CE5D-161E-B1BD-E544-E25C56FAF9CB" referredColumn="F1AE99FB-0524-252D-11BC-BFCB3932AC3B"/>
 </associations>
 </Column>
+<Column name="Constantes_nombreConstante" id="6972FDEA-477D-20AC-88E8-11B5EAA49301">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-25 17:31:14 UTC</createdTime>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4F1875C7-8935-1000-8066-010E19D03C4F" referredColumn="395D0616-A885-C902-F5F1-F9533C9BE064"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="980AD771-EE18-EAA6-64E4-866B79ACCD9F" name="consSoli_PK">
@@ -73,7 +73,7 @@
 <indexColumnUsage>
 <colUsage columnID="09DC2334-D2FE-C011-1E36-B23772BFE127"/>
 <colUsage columnID="A9C4F18B-6E55-0880-B051-5D9C9D66CFEA"/>
-<colUsage columnID="98FC9216-B134-C36C-DBD9-904F8D6B354F"/>
+<colUsage columnID="6972FDEA-477D-20AC-88E8-11B5EAA49301"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="23FCF421-791E-57F9-306D-7CBDAFB6F274" name="consSoli_Solicitud_FK">
@@ -95,7 +95,7 @@
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="98FC9216-B134-C36C-DBD9-904F8D6B354F"/>
+<colUsage columnID="6972FDEA-477D-20AC-88E8-11B5EAA49301"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

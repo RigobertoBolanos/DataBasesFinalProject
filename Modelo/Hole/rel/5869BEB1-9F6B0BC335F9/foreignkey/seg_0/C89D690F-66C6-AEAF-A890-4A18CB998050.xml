@@ -9,7 +9,7 @@
 <referredTableID>28561717-CF23-2D85-A254-315669A2D3F4</referredTableID>
 <keyObject>7EAF8F5A-95FF-6D97-FC7D-6BF71CB467A1</keyObject>
 <referredKeyID>7EAF8F5A-95FF-6D97-FC7D-6BF71CB467A1</referredKeyID>
-<mandatory>true</mandatory>
+<mandatory>false</mandatory>
 <refColNames>codigoProducto,Cliente_cedulaCliente</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>

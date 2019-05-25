@@ -8,20 +8,6 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="codigoConstante" id="5429432E-A887-135A-41F3-CE65F4A8FCCD">
-<createdBy>Juan Diego</createdBy>
-<createdTime>2019-05-19 04:08:25 UTC</createdTime>
-<comment>Codigo que identifica a la constante</comment>
-<commentInRDBMS>Código del parámetro</commentInRDBMS>
-<generatorID>78E70CF3-F450-4617-3FF4-F76505E51052</generatorID>
-<ownerDesignName>Hole</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="nombreConstante" id="395D0616-A885-C902-F5F1-F9533C9BE064">
 <createdBy>Juan Diego</createdBy>
 <createdTime>2019-05-19 04:08:25 UTC</createdTime>
@@ -60,7 +46,7 @@
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="5429432E-A887-135A-41F3-CE65F4A8FCCD"/>
+<colUsage columnID="395D0616-A885-C902-F5F1-F9533C9BE064"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
