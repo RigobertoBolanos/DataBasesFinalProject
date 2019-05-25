@@ -1,8 +1,8 @@
 CREATE OR REPLACE PACKAGE pkSolicitud AS -- spec
-PROCEDURE pInsertar(fechaCreacion DATE, fechaAsignacion DATE, observaciones VARCHAR2, estado VARCHAR2, cliente_cedulaCliente VARCHAR2, funcionario_cedulaFuncionario VARCHAR2, tipoSolicitud VARCHAR2, prodCli_codigoProducto NUMBER, prodCli_cedulaCliente VARCHAR2, idSolicitud VARCHAR2);
-PROCEDURE pBorrar(idSolicitud VARCHAR2);
-PROCEDURE pModificar(fechaCreacion DATE, fechaAsignacion DATE, observaciones VARCHAR2, estado VARCHAR2, cliente_cedulaCliente VARCHAR2, funcionario_cedulaFuncionario VARCHAR2, tipoSolicitud VARCHAR2, prodCli_codigoProducto NUMBER, prodCli_cedulaCliente VARCHAR2, idSolicitud VARCHAR2);
-FUNCTION fConsultar(idSolicitud VARCHAR2) RETURN VARCHAR2;
+PROCEDURE pInsertar(ivFechaCreacion DATE, ivFechaAsignacion DATE, ivObservaciones VARCHAR2, ivEstado VARCHAR2, ivCliente_cedulaCliente VARCHAR2, ivFuncionario_cedulaFuncionario VARCHAR2, ivTipoSolicitud VARCHAR2, ivProdCli_codigoProducto NUMBER, ivProdCli_cedulaCliente VARCHAR2, ivIdSolicitud VARCHAR2);
+PROCEDURE pBorrar(ivIdSolicitud VARCHAR2);
+PROCEDURE pModificar(ivFechaCreacion DATE, ivFechaAsignacion DATE, ivObservaciones VARCHAR2, ivEstado VARCHAR2, ivCliente_cedulaCliente VARCHAR2, ivFuncionario_cedulaFuncionario VARCHAR2, ivTipoSolicitud VARCHAR2, ivProdCli_codigoProducto NUMBER, ivProdCli_cedulaCliente VARCHAR2, ivIdSolicitud VARCHAR2);
+FUNCTION fConsultar(ivIdSolicitud VARCHAR2) RETURN VARCHAR2;
 END pkSolicitud;
 /
 
@@ -10,52 +10,51 @@ CREATE OR REPLACE PACKAGE BODY pkSolicitud AS -- body
 
 -- Implementación Procedimiento 1
 PROCEDURE pInsertar
-(fechaCreacion DATE, fechaAsignacion DATE, observaciones VARCHAR2, estado VARCHAR2, cliente_cedulaCliente VARCHAR2, funcionario_cedulaFuncionario VARCHAR2, tipoSolicitud VARCHAR2, prodCli_codigoProducto NUMBER, prodCli_cedulaCliente VARCHAR2, idSolicitud VARCHAR2)
+(ivFechaCreacion DATE, ivFechaAsignacion DATE, ivObservaciones VARCHAR2, ivEstado VARCHAR2, ivCliente_cedulaCliente VARCHAR2, ivFuncionario_cedulaFuncionario VARCHAR2, ivTipoSolicitud VARCHAR2, ivProdCli_codigoProducto NUMBER, ivProdCli_cedulaCliente VARCHAR2, ivIdSolicitud VARCHAR2)
 IS
 BEGIN
     INSERT INTO SOLICITUD
-    VALUES (fechaCreacion , fechaAsignacion , observaciones , estado , cliente_cedulaCliente , funcionario_cedulaFuncionario , tipoSolicitud , prodCli_codigoProducto , prodCli_cedulaCliente , idSolicitud );
+    VALUES (ivFechaCreacion , ivFechaAsignacion , ivObservaciones , ivEstado , ivCliente_cedulaCliente , ivFuncionario_cedulaFuncionario , ivTipoSolicitud , ivProdCli_codigoProducto , ivProdCli_cedulaCliente , ivIdSolicitud );
 END pInsertar;
 
 -- Implementación Procedimiento 2
-PROCEDURE pBorrar(idSolicitud VARCHAR2) IS
+PROCEDURE pBorrar(ivIdSolicitud VARCHAR2) IS
 BEGIN
-    DELETE FROM SOLICITUD WHERE Solicitud.idSolicitud = idSolicitud;
+    DELETE FROM SOLICITUD WHERE Solicitud.idSolicitud = ivIdSolicitud;
 END pBorrar;
 
 -- Implementación Procedimiento 3
-PROCEDURE pModificar(fechaCreacion DATE, fechaAsignacion DATE, observaciones VARCHAR2, estado VARCHAR2, cliente_cedulaCliente VARCHAR2, funcionario_cedulaFuncionario VARCHAR2, tipoSolicitud VARCHAR2, prodCli_codigoProducto NUMBER, prodCli_cedulaCliente VARCHAR2, idSolicitud VARCHAR2) IS
+PROCEDURE pModificar(ivFechaCreacion DATE, ivFechaAsignacion DATE, ivObservaciones VARCHAR2, ivEstado VARCHAR2, ivCliente_cedulaCliente VARCHAR2, ivFuncionario_cedulaFuncionario VARCHAR2, ivTipoSolicitud VARCHAR2, ivProdCli_codigoProducto NUMBER, ivProdCli_cedulaCliente VARCHAR2, ivIdSolicitud VARCHAR2) IS
 BEGIN
-    UPDATE Solicitud SET Solicitud.fechaCreacion= fechaCreacion , Solicitud.fechaAsignacion = fechaAsignacion , Solicitud.observaciones = observaciones, Solicitud.estado = estado , Solicitud.cliente_cedulaCliente = cliente_cedulaCliente , Solicitud.funcionario_cedulaFuncionario = funcionario_cedulaFuncionario , Solicitud.tipoSolicitud = tipoSolicitud , Solicitud.prodCli_codigoProducto = prodCli_codigoProducto , Solicitud.prodCli_cedulaCliente = prodCli_cedulaCliente 
-    WHERE Solicitud.idSolicitud=idSolicitud;
+    UPDATE Solicitud SET Solicitud.fechaCreacion= ivFechaCreacion , Solicitud.fechaAsignacion = ivFechaAsignacion , Solicitud.observaciones = ivObservaciones, Solicitud.estado = ivEstado , Solicitud.cliente_cedulaCliente = ivCliente_cedulaCliente , Solicitud.funcionario_cedulaFuncionario = ivFuncionario_cedulaFuncionario , Solicitud.tipoSolicitud = ivTipoSolicitud , Solicitud.prodCli_codigoProducto = ivProdCli_codigoProducto , Solicitud.prodCli_cedulaCliente = ivProdCli_cedulaCliente 
+    WHERE Solicitud.idSolicitud= ivIdSolicitud;
 END pModificar;
 
 -- Implementación Procedimiento 4
-FUNCTION fConsultar(idSolicitud VARCHAR2) return VARCHAR2 IS
-vLista varchar2(100);
-CURSOR cSolicitudBuscada IS
+FUNCTION fConsultar(ivIdSolicitud VARCHAR2) return VARCHAR2 IS
+CURSOR cuSolicitudBuscada IS
     SELECT *
     FROM SOLICITUD 
-    WHERE Solicitud.idSolicitud=idSolicitud;
+    WHERE Solicitud.idSolicitud= ivIdSolicitud;
     
-fechaCreacion DATE;
-fechaAsignacion DATE;
-observaciones VARCHAR2(140);
-estado VARCHAR2(15);
-cliente_cedulaCliente VARCHAR2(20);
-funcionario_cedulaFuncionario VARCHAR2(20);
-tipoSolicitud VARCHAR2(20);
-prodCli_codigoProducto NUMBER(8);
-prodCli_cedulaCliente VARCHAR2(20);
-idSolicitudC VARCHAR2(8);
+ovFechaCreacion DATE;
+ovFechaAsignacion DATE;
+ovObservaciones VARCHAR2(140);
+ovEstado VARCHAR2(15);
+ovCliente_cedulaCliente VARCHAR2(20);
+ovFuncionario_cedulaFuncionario VARCHAR2(20);
+ovTipoSolicitud VARCHAR2(20);
+ovProdCli_codigoProducto NUMBER(8);
+ovProdCli_cedulaCliente VARCHAR2(20);
+ovIdSolicitudC VARCHAR2(8);
 
 BEGIN
   
-    OPEN cSolicitudBuscada;
-    FETCH cSolicitudBuscada INTO fechaCreacion , fechaAsignacion , observaciones , estado , cliente_cedulaCliente , funcionario_cedulaFuncionario , tipoSolicitud , prodCli_codigoProducto , prodCli_cedulaCliente , idSolicitudC;
-    CLOSE cSolicitudBuscada;
+    OPEN cuSolicitudBuscada;
+    FETCH cuSolicitudBuscada INTO ovFechaCreacion , ovFechaAsignacion , ovObservaciones , ovEstado , ovCliente_cedulaCliente , ovFuncionario_cedulaFuncionario , ovTipoSolicitud , ovProdCli_codigoProducto , ovProdCli_cedulaCliente , ovIdSolicitudC;
+    CLOSE cuSolicitudBuscada;
     
-    RETURN idSolicitudC || ' ' || TO_CHAR(fechaCreacion) || ' ' || TO_CHAR(fechaAsignacion) || ' ' || estado || ' ' || cliente_cedulaCliente || ' ' || funcionario_cedulaFuncionario || ' ' || tipoSolicitud || ' ' || TO_CHAR(prodCli_codigoProducto) || ' ' || prodCli_cedulaCliente || ' ' || observaciones;
+    RETURN ovIdSolicitudC || ' ' || TO_CHAR(ovFechaCreacion) || ' ' || TO_CHAR(ovFechaAsignacion) || ' ' || ovEstado || ' ' || ovCliente_cedulaCliente || ' ' || ovFuncionario_cedulaFuncionario || ' ' || ovTipoSolicitud || ' ' || TO_CHAR(ovProdCli_codigoProducto) || ' ' || ovProdCli_cedulaCliente || ' ' || ovObservaciones;
     
 END fConsultar;
 
