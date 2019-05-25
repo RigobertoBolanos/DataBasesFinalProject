@@ -55,6 +55,30 @@
 <colAssociation fkAssociation="C9290C7E-AD3D-68D2-0E79-38AF5C9EF710" referredColumn="395D0616-A885-C902-F5F1-F9533C9BE064"/>
 </associations>
 </Column>
+<Column name="fecha_inicio" id="E799E310-68C0-E8EE-BA2B-DEF7A3850C54">
+<createdBy>hp</createdBy>
+<createdTime>2019-05-25 22:29:30 UTC</createdTime>
+<commentInRDBMS>Fecha inicio</commentInRDBMS>
+<ownerDesignName>Hole</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_retiro" id="A23F07DB-F878-A515-74B3-0888116BD8C4">
+<createdBy>hp</createdBy>
+<createdTime>2019-05-25 22:29:30 UTC</createdTime>
+<commentInRDBMS>Fecha retiro</commentInRDBMS>
+<ownerDesignName>Hole</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="7EAF8F5A-95FF-6D97-FC7D-6BF71CB467A1" name="ProdCli_PK">
