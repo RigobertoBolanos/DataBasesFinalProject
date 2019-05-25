@@ -1,14 +1,9 @@
 -- Generado por Oracle SQL Developer Data Modeler 18.4.0.339.1532
---   en:        2019-05-25 13:43:33 COT
+--   en:        2019-05-25 16:14:24 COT
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
-DROP TABLE CLIENTE CASCADE CONSTRAINTS;
-DROP TABLE CONSSOLI CASCADE CONSTRAINTS;
-DROP TABLE CONSTANTES CASCADE CONSTRAINTS;
-DROP TABLE FUNCIONARIO CASCADE CONSTRAINTS;
-DROP TABLE PRODCLI CASCADE CONSTRAINTS;
-DROP TABLE SOLICITUD CASCADE CONSTRAINTS;
+
 
 CREATE TABLE cliente (
     cedulacliente     VARCHAR2(20) NOT NULL,
@@ -22,21 +17,27 @@ ALTER TABLE cliente ADD CONSTRAINT cliente_pk PRIMARY KEY ( cedulacliente );
 
 CREATE TABLE conssoli (
     solicitud_idsolicitud        VARCHAR2(8) NOT NULL,
-    constantes_nombreconstante   VARCHAR2(20) NOT NULL
+    constantes_nombreconstante   VARCHAR2 
+--  ERROR: VARCHAR2 size not specified 
+     NOT NULL,
+    constantes_codigoconstante   VARCHAR2(2) NOT NULL
 );
 
 ALTER TABLE conssoli ADD CONSTRAINT conssoli_pk PRIMARY KEY ( constantes_nombreconstante,
                                                               solicitud_idsolicitud );
 
 CREATE TABLE constantes (
-    nombreconstante   VARCHAR2(20) NOT NULL,
-    valor             VARCHAR2(20) NOT NULL
+    nombreconstante   VARCHAR2 
+--  ERROR: VARCHAR2 size not specified 
+     NOT NULL,
+    valor             VARCHAR2(20) NOT NULL,
+    codigoconstante   VARCHAR2(2) NOT NULL
 );
 
 COMMENT ON COLUMN constantes.nombreconstante IS
     'Nombre de la constante';
 
-ALTER TABLE constantes ADD CONSTRAINT constantes_pk PRIMARY KEY ( nombreconstante );
+ALTER TABLE constantes ADD CONSTRAINT constantes_pk PRIMARY KEY ( codigoconstante );
 
 CREATE TABLE funcionario (
     cedulafuncionario   VARCHAR2(20) NOT NULL,
@@ -51,7 +52,7 @@ ALTER TABLE funcionario ADD CONSTRAINT funcionario_pk PRIMARY KEY ( cedulafuncio
 CREATE TABLE prodcli (
     codigoproducto               NUMBER(8) NOT NULL,
     cliente_cedulacliente        VARCHAR2(20) NOT NULL,
-    constantes_nombreconstante   VARCHAR2(20) NOT NULL
+    constantes_codigoconstante   VARCHAR2(2) NOT NULL
 );
 
 COMMENT ON COLUMN prodcli.codigoproducto IS
@@ -86,7 +87,7 @@ COMMENT ON COLUMN solicitud.estado IS
     'Estado de la solicitud, pueden ser: ASIGNADO, PENDIENTE, ATENDIDO.';
 
 COMMENT ON COLUMN solicitud.cliente_cedulacliente IS
-    'Cedula del cliente que realizÃ³ la solicitud';
+    'Cedula del cliente que realizó la solicitud';
 
 COMMENT ON COLUMN solicitud.funcionario_cedulafuncionario IS
     'Cedula del funcionario al que se asigno la solicitud';
@@ -97,8 +98,8 @@ COMMENT ON COLUMN solicitud.tiposolicitud IS
 ALTER TABLE solicitud ADD CONSTRAINT solicitud_pk PRIMARY KEY ( idsolicitud );
 
 ALTER TABLE conssoli
-    ADD CONSTRAINT conssoli_constantes_fk FOREIGN KEY ( constantes_nombreconstante )
-        REFERENCES constantes ( nombreconstante );
+    ADD CONSTRAINT conssoli_constantes_fk FOREIGN KEY ( constantes_codigoconstante )
+        REFERENCES constantes ( codigoconstante );
 
 ALTER TABLE conssoli
     ADD CONSTRAINT conssoli_solicitud_fk FOREIGN KEY ( solicitud_idsolicitud )
@@ -109,8 +110,8 @@ ALTER TABLE prodcli
         REFERENCES cliente ( cedulacliente );
 
 ALTER TABLE prodcli
-    ADD CONSTRAINT prodcli_constantes_fk FOREIGN KEY ( constantes_nombreconstante )
-        REFERENCES constantes ( nombreconstante );
+    ADD CONSTRAINT prodcli_constantes_fk FOREIGN KEY ( constantes_codigoconstante )
+        REFERENCES constantes ( codigoconstante );
 
 ALTER TABLE solicitud
     ADD CONSTRAINT solicitud_cliente_fk FOREIGN KEY ( cliente_cedulacliente )
@@ -168,5 +169,5 @@ ALTER TABLE solicitud
 -- ORDS ENABLE SCHEMA                       0
 -- ORDS ENABLE OBJECT                       0
 -- 
--- ERRORS                                   0
+-- ERRORS                                   2
 -- WARNINGS                                 0
