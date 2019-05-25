@@ -2,7 +2,7 @@ CREATE OR REPLACE PACKAGE pkSolicitud AS -- spec
 PROCEDURE pInsertar(fechaCreacion DATE, fechaAsignacion DATE, observaciones VARCHAR2, estado VARCHAR2, cliente_cedulaCliente VARCHAR2, funcionario_cedulaFuncionario VARCHAR2, tipoSolicitud VARCHAR2, prodCli_codigoProducto NUMBER, prodCli_cedulaCliente VARCHAR2, idSolicitud VARCHAR2);
 PROCEDURE pBorrar(idSolicitud VARCHAR2);
 PROCEDURE pModificar(fechaCreacion DATE, fechaAsignacion DATE, observaciones VARCHAR2, estado VARCHAR2, cliente_cedulaCliente VARCHAR2, funcionario_cedulaFuncionario VARCHAR2, tipoSolicitud VARCHAR2, prodCli_codigoProducto NUMBER, prodCli_cedulaCliente VARCHAR2, idSolicitud VARCHAR2);
-FUNCTION fConsultaridSolicitud VARCHAR2) RETURN VARCHAR2;
+FUNCTION fConsultar(idSolicitud VARCHAR2) RETURN VARCHAR2;
 END pkSolicitud;
 /
 
