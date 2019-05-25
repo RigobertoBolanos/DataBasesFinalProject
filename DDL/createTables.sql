@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 18.4.0.339.1532
---   en:        2019-05-19 13:40:25 COT
+--   en:        2019-05-25 12:49:27 COT
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
@@ -18,28 +18,24 @@ ALTER TABLE cliente ADD CONSTRAINT cliente_pk PRIMARY KEY ( cedulacliente );
 CREATE TABLE conssoli (
     solicitud_cedulacliente       VARCHAR2(20) NOT NULL,
     solicitud_cedulafuncionario   VARCHAR2(20) NOT NULL,
-    constantes_codigoconstante    VARCHAR2(20) NOT NULL,
-    solicitud_idsolicitud         VARCHAR2(8) NOT NULL
+    solicitud_idsolicitud         VARCHAR2(8) NOT NULL,
+    constantes_nombreconstante    VARCHAR2(20) NOT NULL
 );
 
 ALTER TABLE conssoli
     ADD CONSTRAINT conssoli_pk PRIMARY KEY ( solicitud_cedulacliente,
                                              solicitud_cedulafuncionario,
-                                             constantes_codigoconstante );
+                                             constantes_nombreconstante );
 
 CREATE TABLE constantes (
-    codigoconstante   VARCHAR2(20) NOT NULL,
     nombreconstante   VARCHAR2(20) NOT NULL,
     valor             VARCHAR2(20) NOT NULL
 );
 
-COMMENT ON COLUMN constantes.codigoconstante IS
-    'Código del parámetro';
-
 COMMENT ON COLUMN constantes.nombreconstante IS
     'Nombre de la constante';
 
-ALTER TABLE constantes ADD CONSTRAINT constantes_pk PRIMARY KEY ( codigoconstante );
+ALTER TABLE constantes ADD CONSTRAINT constantes_pk PRIMARY KEY ( nombreconstante );
 
 CREATE TABLE funcionario (
     cedulafuncionario   VARCHAR2(20) NOT NULL,
@@ -54,16 +50,11 @@ ALTER TABLE funcionario ADD CONSTRAINT funcionario_pk PRIMARY KEY ( cedulafuncio
 CREATE TABLE prodcli (
     codigoproducto               NUMBER(8) NOT NULL,
     cliente_cedulacliente        VARCHAR2(20) NOT NULL,
-    constantes_codigoconstante   VARCHAR2(20) NOT NULL
+    constantes_nombreconstante   VARCHAR2(20) NOT NULL
 );
 
 COMMENT ON COLUMN prodcli.codigoproducto IS
     'Codigo del producto';
-
-CREATE UNIQUE INDEX prodcli__idx ON
-    prodcli (
-        constantes_codigoconstante
-    ASC );
 
 ALTER TABLE prodcli ADD CONSTRAINT prodcli_pk PRIMARY KEY ( codigoproducto,
                                                             cliente_cedulacliente );
@@ -76,8 +67,8 @@ CREATE TABLE solicitud (
     cliente_cedulacliente           VARCHAR2(20) NOT NULL,
     funcionario_cedulafuncionario   VARCHAR2(20) NOT NULL,
     tiposolicitud                   VARCHAR2(20) NOT NULL,
-    prodcli_codigoproducto          NUMBER(8) NOT NULL,
-    prodcli_cedulacliente           VARCHAR2(20) NOT NULL,
+    prodcli_codigoproducto          NUMBER(8),
+    prodcli_cedulacliente           VARCHAR2(20),
     idsolicitud                     VARCHAR2(8) NOT NULL
 );
 
@@ -105,8 +96,8 @@ COMMENT ON COLUMN solicitud.tiposolicitud IS
 ALTER TABLE solicitud ADD CONSTRAINT solicitud_pk PRIMARY KEY ( idsolicitud );
 
 ALTER TABLE conssoli
-    ADD CONSTRAINT conssoli_constantes_fk FOREIGN KEY ( constantes_codigoconstante )
-        REFERENCES constantes ( codigoconstante );
+    ADD CONSTRAINT conssoli_constantes_fk FOREIGN KEY ( constantes_nombreconstante )
+        REFERENCES constantes ( nombreconstante );
 
 ALTER TABLE conssoli
     ADD CONSTRAINT conssoli_solicitud_fk FOREIGN KEY ( solicitud_idsolicitud )
@@ -117,8 +108,8 @@ ALTER TABLE prodcli
         REFERENCES cliente ( cedulacliente );
 
 ALTER TABLE prodcli
-    ADD CONSTRAINT prodcli_constantes_fk FOREIGN KEY ( constantes_codigoconstante )
-        REFERENCES constantes ( codigoconstante );
+    ADD CONSTRAINT prodcli_constantes_fk FOREIGN KEY ( constantes_nombreconstante )
+        REFERENCES constantes ( nombreconstante );
 
 ALTER TABLE solicitud
     ADD CONSTRAINT solicitud_cliente_fk FOREIGN KEY ( cliente_cedulacliente )
@@ -139,7 +130,7 @@ ALTER TABLE solicitud
 -- Informe de Resumen de Oracle SQL Developer Data Modeler: 
 -- 
 -- CREATE TABLE                             6
--- CREATE INDEX                             1
+-- CREATE INDEX                             0
 -- ALTER TABLE                             13
 -- CREATE VIEW                              0
 -- ALTER VIEW                               0
