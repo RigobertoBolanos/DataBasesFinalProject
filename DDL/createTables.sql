@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 18.4.0.339.1532
---   en:        2019-05-25 16:14:24 COT
+--   en:        2019-05-25 16:20:06 COT
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
@@ -17,19 +17,14 @@ ALTER TABLE cliente ADD CONSTRAINT cliente_pk PRIMARY KEY ( cedulacliente );
 
 CREATE TABLE conssoli (
     solicitud_idsolicitud        VARCHAR2(8) NOT NULL,
-    constantes_nombreconstante   VARCHAR2 
---  ERROR: VARCHAR2 size not specified 
-     NOT NULL,
     constantes_codigoconstante   VARCHAR2(2) NOT NULL
 );
 
-ALTER TABLE conssoli ADD CONSTRAINT conssoli_pk PRIMARY KEY ( constantes_nombreconstante,
-                                                              solicitud_idsolicitud );
+ALTER TABLE conssoli ADD CONSTRAINT conssoli_pk PRIMARY KEY ( solicitud_idsolicitud,
+                                                              constantes_codigoconstante );
 
 CREATE TABLE constantes (
-    nombreconstante   VARCHAR2 
---  ERROR: VARCHAR2 size not specified 
-     NOT NULL,
+    nombreconstante   VARCHAR2(15) NOT NULL,
     valor             VARCHAR2(20) NOT NULL,
     codigoconstante   VARCHAR2(2) NOT NULL
 );
@@ -169,5 +164,5 @@ ALTER TABLE solicitud
 -- ORDS ENABLE SCHEMA                       0
 -- ORDS ENABLE OBJECT                       0
 -- 
--- ERRORS                                   2
+-- ERRORS                                   0
 -- WARNINGS                                 0
