@@ -1,46 +1,46 @@
 CREATE OR REPLACE PACKAGE pkProductoCliente as
-PROCEDURE pInsertar(codigoProducto NUMBER, cliente_cedulacliente VARCHAR2, constantes_codigoconstante VARCHAR2);
-PROCEDURE pBorrar(codigoProducto NUMBER, cedulaCliente VARCHAR2);
-PROCEDURE pModificar(codigoProducto NUMBER, cliente_cedulacliente VARCHAR2, constantes_codigoconstante VARCHAR2);
-FUNCTION fConsultar(codigoProducto NUMBER, cliente_cedulacliente VARCHAR2) RETURN VARCHAR2;
+PROCEDURE pInsertar(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2, ivConstantes_codigoconstante VARCHAR2);
+PROCEDURE pBorrar(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2);
+PROCEDURE pModificar(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2, ivConstantes_codigoconstante VARCHAR2);
+FUNCTION fConsultar(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2) RETURN VARCHAR2;
 END pkProductoCliente;
 /
 
 CREATE OR REPLACE PACKAGE BODY pkProductoCliente AS
 
-PROCEDURE pInsertar(codigoProducto NUMBER, cliente_cedulacliente VARCHAR2, constantes_codigoconstante VARCHAR2)
+PROCEDURE pInsertar(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2, ivConstantes_codigoconstante VARCHAR2)
 IS 
 BEGIN
-    INSERT INTO PRODCLI VALUES (codigoProducto, cliente_cedulacliente, constantes_codigoconstante);
+    INSERT INTO PRODCLI VALUES (ivCodigoProducto, ivCliente_cedulacliente, ivConstantes_codigoconstante);
 END pInsertar;
 
-PROCEDURE pBorrar(codigoProducto NUMBER, cedulaCliente VARCHAR2)
+PROCEDURE pBorrar(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2)
 IS
 BEGIN
-    DELETE FROM PRODCLI WHERE PRODCLI.codigoProducto = codigoProducto AND PRODCLI.cliente_cedulacliente = cedulaCliente;
+    DELETE FROM PRODCLI WHERE PRODCLI.codigoProducto = ivCodigoProducto AND PRODCLI.cliente_cedulacliente = ivCliente_cedulacliente;
 END pBorrar;
 
-PROCEDURE pModificar(codigoProducto NUMBER, cliente_cedulacliente VARCHAR2, constantes_codigoconstante VARCHAR2)
+PROCEDURE pModificar(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2, ivConstantes_codigoconstante VARCHAR2)
 IS
 BEGIN 
-    UPDATE PRODCLI SET PRODCLI.codigoProducto = codigoProducto WHERE PRODCLI.codigoProducto = codigoProducto AND PRODCLI.cliente_cedulacliente = cliente_cedulacliente;  
+    UPDATE PRODCLI SET PRODCLI.codigoProducto = ivCodigoProducto WHERE PRODCLI.codigoProducto = ivCodigoProducto AND PRODCLI.cliente_cedulacliente = ivCliente_cedulacliente;  
 END pModificar;
 
-FUNCTION fConsultar(codigoProducto NUMBER, cliente_cedulacliente VARCHAR2) RETURN VARCHAR2
+FUNCTION fConsultar(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2) RETURN VARCHAR2
 IS
-CURSOR productoClienteBuscado IS 
+CURSOR cuProductoClienteBuscado IS 
     SELECT *
     FROM PRODCLI 
-    WHERE PRODCLI.codigoProducto = codigoProducto AND PRODCLI.cliente_cedulacliente = cliente_cedulacliente;
-codigoProductoCliente NUMBER(8);
-cliente_cedulaclienteV VARCHAR2(20);
-constantes_codigoconstante VARCHAR2(20);
+    WHERE PRODCLI.codigoProducto = ivCodigoProducto AND PRODCLI.cliente_cedulacliente = ivCliente_cedulacliente;
+vCodigoProducto NUMBER(8);
+vCliente_cedulacliente VARCHAR2(20);
+vConstantes_codigo VARCHAR2(20);
 BEGIN
-    OPEN productoClienteBuscado;
-    FETCH productoClienteBuscado INTO codigoProductoCliente, cliente_cedulaclienteV, constantes_codigoconstante;
-    CLOSE productoClienteBuscado;
+    OPEN cuProductoClienteBuscado;
+    FETCH cuProductoClienteBuscado INTO vCodigoProducto, vCliente_cedulacliente, vConstantes_codigo;
+    CLOSE cuProductoClienteBuscado;
     
-    RETURN codigoProductoCliente || ' ' || cliente_cedulaclienteV || ' ' || constantes_codigoconstante;
+    RETURN vCodigoProducto || ' ' || vCliente_cedulacliente || ' ' || vConstantes_codigo;
 END fConsultar;
 
 END pkProductoCliente;
