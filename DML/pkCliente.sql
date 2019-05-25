@@ -51,8 +51,12 @@ BEGIN
     FETCH cuClienteSolicitado INTO ovCedulaCliente, ovNombre, ovFechaNacimiento, ovDireccion, ovTelefono;
     CLOSE cuClienteSolicitado;
     
+    if ovcedulacliente is not null
+    then
     RETURN ovCedulaCliente || ' ' || ovNombre || ' ' || TO_CHAR(ovFechaNacimiento) || ' ' || ovDireccion || ' ' || ovTelefono;
-    
+    else
+    RETURN null;
+    END IF;
 END fConsultar;
 
 END pkCliente;
