@@ -1,6 +1,6 @@
 CREATE OR REPLACE PACKAGE pkRegistroNivel2 as
 PROCEDURE pRegistrarCliente(ivCedula VARCHAR2, ivNombre VARCHAR2, ivFechaNacimiento DATE, ivDireccion VARCHAR2, ivTelefono VARCHAR2);
-PROCEDURE pRegistrarSolicitud(ivFechaCreacion DATE,ivObservaciones VARCHAR2, ivEstado VARCHAR2, ivCliente_cedulaCliente VARCHAR2, ivTipoSolicitud VARCHAR2, ivProdCli_codigoProducto NUMBER, ivIdSolicitud VARCHAR2);
+PROCEDURE pRegistrarSolicitud(ivObservaciones VARCHAR2, ivEstado VARCHAR2, ivCliente_cedulaCliente VARCHAR2, ivTipoSolicitud VARCHAR2, ivProdCli_codigoProducto NUMBER, ivIdSolicitud VARCHAR2);
 PROCEDURE pRegistrarProductoCliente(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2, ivConstantes_codigoconstante VARCHAR2);
 PROCEDURE pRegistrarConstante(ivCodigoConstante VARCHAR2, ivNombreConstante VARCHAR2, ivValor VARCHAR2);
 PROCEDURE pRegistrarConstantesSolicitud(ivSolicitud_idsolicitud VARCHAR2, ivConstantes_codigoConstante VARCHAR2);
@@ -10,7 +10,7 @@ PROCEDURE pBorrarCliente (ivCedula VARCHAR2);
 PROCEDURE pBorrarSolicitud(ivIdSolicitud VARCHAR2);
 PROCEDURE pBorrarProductoCliente(ivCodigoProducto NUMBER);
 PROCEDURE pBorrarConstante(ivCodigoConstante VARCHAR2);
-PROCEDURE pBorrarConstanteSolicitud(ivSolicitud_idsolicitud VARCHAR2, ivConstantes_nombreconstante VARCHAR2);
+PROCEDURE pBorrarConstanteSolicitud(ivSolicitud_idsolicitud VARCHAR2, ivConstantes_codigoConstante VARCHAR2);
 PROCEDURE pBorrarFuncionario(ivCedulaFuncionario VARCHAR2);
 
 END pkRegistroNivel2;
@@ -37,9 +37,9 @@ BEGIN
    pkconstantes.pborrar(ivCodigoConstante);
 END pBorrarConstante;
 --Borrar Constante Solicitud
-PROCEDURE pBorrarConstanteSolicitud(ivSolicitud_idsolicitud VARCHAR2, ivConstantes_nombreconstante VARCHAR2)Is
+PROCEDURE pBorrarConstanteSolicitud(ivSolicitud_idsolicitud VARCHAR2, ivConstantes_codigoConstante VARCHAR2)Is
 BEGIN
-   pkConstantesSolicitud.pborrar(ivSolicitud_idsolicitud,ivConstantes_nombreconstante);
+   pkConstantesSolicitud.pborrar(ivSolicitud_idsolicitud,ivConstantes_codigoConstante);
 END;
 --Borrar Funcionario
 PROCEDURE pBorrarFuncionario(ivCedulaFuncionario VARCHAR2)Is
@@ -61,7 +61,7 @@ END pRegistrarFuncionario;
 PROCEDURE pRegistrarConstante(ivCodigoConstante VARCHAR2, ivNombreConstante VARCHAR2, ivValor VARCHAR2)
 Is
 BEGIN
-    pkconstantes.pinsertar(ivCodigoConstante, ivNombreConstante , ivValor);
+    pkconstantes.pinsertar(ivCodigoConstante, ivCodigoConstante , ivValor);
 END pRegistrarConstante;
 
 --Registrar Producto Cliente
@@ -82,7 +82,7 @@ END pRegistrarCliente;
 
 -- Registrar Solicitud
 
-PROCEDURE pRegistrarSolicitud(ivFechaCreacion DATE,ivObservaciones VARCHAR2, ivEstado VARCHAR2, ivCliente_cedulaCliente VARCHAR2, ivTipoSolicitud VARCHAR2, ivProdCli_codigoProducto NUMBER, ivIdSolicitud VARCHAR2)
+PROCEDURE pRegistrarSolicitud(ivObservaciones VARCHAR2, ivEstado VARCHAR2, ivCliente_cedulaCliente VARCHAR2, ivTipoSolicitud VARCHAR2, ivProdCli_codigoProducto NUMBER, ivIdSolicitud VARCHAR2)
 IS
 vCliente VARCHAR2(100);
 BEGIN

@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 18.4.0.339.1532
---   en:        2019-05-25 21:31:17 COT
+--   en:        2019-05-25 23:25:04 COT
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 DROP TABLE CLIENTE CASCADE CONSTRAINTS;
@@ -29,13 +29,19 @@ ALTER TABLE conssoli ADD CONSTRAINT conssoli_pk PRIMARY KEY ( solicitud_idsolici
                                                               constantes_codigoconstante );
 
 CREATE TABLE constantes (
-    nombreconstante   VARCHAR2(15) NOT NULL,
-    valor             VARCHAR2(20) NOT NULL,
-    codigoconstante   VARCHAR2(2) NOT NULL
+    codigoconstante   VARCHAR2(20) NOT NULL,
+    nombreconstante   VARCHAR2(20) NOT NULL,
+    valor             VARCHAR2(20) NOT NULL
 );
+
+COMMENT ON COLUMN constantes.codigoconstante IS
+    'codigo que identifica a la constante';
 
 COMMENT ON COLUMN constantes.nombreconstante IS
     'Nombre de la constante';
+
+COMMENT ON COLUMN constantes.valor IS
+    'valor de la constante';
 
 ALTER TABLE constantes ADD CONSTRAINT constantes_pk PRIMARY KEY ( codigoconstante );
 
@@ -52,7 +58,7 @@ ALTER TABLE funcionario ADD CONSTRAINT funcionario_pk PRIMARY KEY ( cedulafuncio
 CREATE TABLE prodcli (
     codigoproducto               NUMBER(8) NOT NULL,
     cliente_cedulacliente        VARCHAR2(20) NOT NULL,
-    constantes_codigoconstante   VARCHAR2(2) NOT NULL,
+    constantes_codigoconstante   VARCHAR2(20) NOT NULL,
     fechainicio                  DATE NOT NULL,
     fecharetiro                  DATE
 );
