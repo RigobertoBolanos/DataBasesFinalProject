@@ -13,9 +13,50 @@ PROCEDURE pBorrarConstante(ivCodigoConstante VARCHAR2);
 PROCEDURE pBorrarConstanteSolicitud(ivSolicitud_idsolicitud VARCHAR2, ivConstantes_codigoConstante VARCHAR2);
 PROCEDURE pBorrarFuncionario(ivCedulaFuncionario VARCHAR2);
 
+PROCEDURE pActualizarCliente(ivCedula VARCHAR2, ivNombre VARCHAR2, ivFechaNacimiento DATE, ivDireccion VARCHAR2, ivTelefono VARCHAR2);
+PROCEDURE pActualizarSolicitud(ivFechaCreacion DATE, ivFechaAsignacion DATE, ivObservaciones VARCHAR2, ivEstado VARCHAR2, ivCliente_cedulaCliente VARCHAR2, ivFuncionario_cedulaFuncionario VARCHAR2, ivTipoSolicitud VARCHAR2, ivProdCli_codigoProducto NUMBER, ivIdSolicitud VARCHAR2);
+PROCEDURE pActualizarProductoCliente(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2, ivConstantes_codigoconstante VARCHAR2);
+PROCEDURE pActualizarConstante(ivCodigoConstante VARCHAR2,ivNombreConstante VARCHAR2, ivValor VARCHAR2);
+PROCEDURE pActualizarConstantesSolicitud(ivSolicitud_idsolicitud VARCHAR2, ivConstantes_codigoConstante VARCHAR2);
+PROCEDURE pActualizarFuncionario(ivCedulaFuncionarioDada VARCHAR2, ivNuevoNombre VARCHAR2, ivNuevaFechaNacimiento DATE, ivNuevaDireccion VARCHAR2, ivNuevoTelefono VARCHAR2);
+
+
 END pkRegistroNivel2;
 /
 CREATE OR REPLACE PACKAGE BODY pkRegistroNivel2 as
+--Actualizar Cliente
+PROCEDURE pActualizarCliente(ivCedula VARCHAR2, ivNombre VARCHAR2, ivFechaNacimiento DATE, ivDireccion VARCHAR2, ivTelefono VARCHAR2)
+IS
+BEGIN
+    pkcliente.pmodificar(ivCedula , ivNombre , ivFechaNacimiento , ivDireccion , ivTelefono );
+END pActualizarCliente;
+--Actualiza Solicitud
+PROCEDURE pActualizarSolicitud(ivFechaCreacion DATE, ivFechaAsignacion DATE, ivObservaciones VARCHAR2, ivEstado VARCHAR2, ivCliente_cedulaCliente VARCHAR2, ivFuncionario_cedulaFuncionario VARCHAR2, ivTipoSolicitud VARCHAR2, ivProdCli_codigoProducto NUMBER, ivIdSolicitud VARCHAR2)
+IS
+BEGIN
+    pksolicitud.pmodificar(ivFechaCreacion , ivFechaAsignacion , ivObservaciones , ivEstado , ivCliente_cedulaCliente , ivFuncionario_cedulaFuncionario , ivTipoSolicitud , ivProdCli_codigoProducto , ivIdSolicitud );
+END pActualizarSolicitud;
+--Actualizar Producto Cliente
+PROCEDURE pActualizarProductoCliente(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2, ivConstantes_codigoconstante VARCHAR2)IS
+BEGIN
+    pkproductocliente.pmodificar(ivCodigoProducto , ivCliente_cedulacliente , ivConstantes_codigoconstante);
+END pActualizarProductoCliente;
+--Actualizar Constante
+PROCEDURE pActualizarConstante(ivCodigoConstante VARCHAR2,ivNombreConstante VARCHAR2, ivValor VARCHAR2)IS
+BEGIN
+    pkconstantes.pmodificar(ivCodigoConstante ,ivNombreConstante , ivValor );
+END pActualizarConstante;
+--Actualizar Constantes Solicitud
+PROCEDURE pActualizarConstantesSolicitud(ivSolicitud_idsolicitud VARCHAR2, ivConstantes_codigoConstante VARCHAR2)IS
+BEGIN
+    pkconstantessolicitud.pmodificar(ivSolicitud_idsolicitud , ivConstantes_codigoConstante);
+END pActualizarConstantesSolicitud;
+--Actualizar Funcionario
+PROCEDURE pActualizarFuncionario(ivCedulaFuncionarioDada VARCHAR2, ivNuevoNombre VARCHAR2, ivNuevaFechaNacimiento DATE, ivNuevaDireccion VARCHAR2, ivNuevoTelefono VARCHAR2)IS
+BEGIN
+    pkfuncionario.pmodificar(ivCedulaFuncionarioDada , ivNuevoNombre , ivNuevaFechaNacimiento , ivNuevaDireccion , ivNuevoTelefono);
+END pActualizarFuncionario;
+
 --Borrar Cliente
 PROCEDURE pBorrarCliente (ivCedula VARCHAR2)Is
 BEGIN
