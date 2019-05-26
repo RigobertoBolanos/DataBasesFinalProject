@@ -24,7 +24,7 @@ PROCEDURE pModificar(ivSolicitud_idsolicitud VARCHAR2, ivConstantes_codigoConsta
 IS
 BEGIN 
     UPDATE CONSSOLI SET CONSSOLI.solicitud_idsolicitud = ivSolicitud_idsolicitud WHERE CONSSOLI.solicitud_idsolicitud = ivSolicitud_idsolicitud; 
-    UPDATE CONSSOLI SET CONSSOLI.constantes_nombreconstante = ivConstantes_codigoConstante WHERE CONSSOLI.constantes_codigoconstante = ivConstantes_codigoConstante; 
+    UPDATE CONSSOLI SET CONSSOLI.constantes_codigoconstante = ivConstantes_codigoConstante WHERE CONSSOLI.constantes_codigoconstante = ivConstantes_codigoConstante; 
 END pModificar;
 
 FUNCTION fConsultar(ivSolicitud_idsolicitud VARCHAR2, ivConstantes_codigoConstante VARCHAR2) RETURN VARCHAR2
