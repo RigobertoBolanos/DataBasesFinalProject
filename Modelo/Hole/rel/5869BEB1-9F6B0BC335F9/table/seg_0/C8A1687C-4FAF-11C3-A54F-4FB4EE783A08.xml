@@ -8,6 +8,19 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="codigoConstante" id="67A3C419-D475-C539-EE49-996B99B1F9E8">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-25 21:14:02 UTC</createdTime>
+<comment>Codigo que identifica la constante</comment>
+<commentInRDBMS>codigo que identifica a la constante</commentInRDBMS>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="nombreConstante" id="395D0616-A885-C902-F5F1-F9533C9BE064">
 <createdBy>Juan Diego</createdBy>
 <createdTime>2019-05-19 04:08:25 UTC</createdTime>
@@ -18,14 +31,15 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>15</dataTypeSize>
-<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="valor" id="0B873C8E-D1FF-1919-BF89-716C34E724EC">
 <createdBy>Juan Diego</createdBy>
 <createdTime>2019-05-19 04:08:25 UTC</createdTime>
 <comment>Valor de la constante</comment>
+<commentInRDBMS>valor de la constante</commentInRDBMS>
 <generatorID>85D7F054-0186-1867-48A5-2DC58A91BFEB</generatorID>
 <ownerDesignName>Hole</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -33,18 +47,6 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>20</dataTypeSize>
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="codigoConstante" id="67A3C419-D475-C539-EE49-996B99B1F9E8">
-<createdBy>Juan Diego</createdBy>
-<createdTime>2019-05-25 21:14:02 UTC</createdTime>
-<comment>Codigo que identifica la constante</comment>
-<ownerDesignName>Hole</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>2</dataTypeSize>
-<ownDataTypeParameters>2,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>

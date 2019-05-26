@@ -46,13 +46,35 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>2</dataTypeSize>
+<dataTypeSize>20</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="C9290C7E-AD3D-68D2-0E79-38AF5C9EF710" referredColumn="67A3C419-D475-C539-EE49-996B99B1F9E8"/>
 </associations>
+</Column>
+<Column name="fechaInicio" id="F6394AE6-8F7E-B2E9-AFA3-317FBE81249E">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-26 02:26:05 UTC</createdTime>
+<comment>fecha creación del producto</comment>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fechaRetiro" id="61D790CD-D20E-D3ED-5FF0-33CBD3084D22">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-26 02:27:49 UTC</createdTime>
+<ownerDesignName>Hole</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
