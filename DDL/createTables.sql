@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 18.4.0.339.1532
---   en:        2019-05-25 20:23:29 COT
+--   en:        2019-05-25 21:31:17 COT
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
@@ -47,7 +47,9 @@ ALTER TABLE funcionario ADD CONSTRAINT funcionario_pk PRIMARY KEY ( cedulafuncio
 CREATE TABLE prodcli (
     codigoproducto               NUMBER(8) NOT NULL,
     cliente_cedulacliente        VARCHAR2(20) NOT NULL,
-    constantes_codigoconstante   VARCHAR2(2) NOT NULL
+    constantes_codigoconstante   VARCHAR2(2) NOT NULL,
+    fechainicio                  DATE NOT NULL,
+    fecharetiro                  DATE
 );
 
 COMMENT ON COLUMN prodcli.codigoproducto IS
