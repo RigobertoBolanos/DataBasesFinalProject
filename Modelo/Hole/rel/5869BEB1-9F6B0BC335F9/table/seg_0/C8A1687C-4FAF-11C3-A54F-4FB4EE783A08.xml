@@ -18,8 +18,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="valor" id="0B873C8E-D1FF-1919-BF89-716C34E724EC">
@@ -35,6 +35,18 @@
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="codigoConstante" id="67A3C419-D475-C539-EE49-996B99B1F9E8">
+<createdBy>Juan Diego</createdBy>
+<createdTime>2019-05-25 21:14:02 UTC</createdTime>
+<comment>Codigo que identifica la constante</comment>
+<ownerDesignName>Hole</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2</dataTypeSize>
+<ownDataTypeParameters>2,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="1852A82D-82A3-C669-CE93-6A2E15D03601" name="Constantes_PK">
@@ -46,7 +58,7 @@
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="395D0616-A885-C902-F5F1-F9533C9BE064"/>
+<colUsage columnID="67A3C419-D475-C539-EE49-996B99B1F9E8"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

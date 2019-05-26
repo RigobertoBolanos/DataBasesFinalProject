@@ -9,7 +9,7 @@
 <referredTableID>D065F116-CEE2-B71B-6982-EAFBC4E8D734</referredTableID>
 <keyObject>2CE1480A-63B5-E764-1DF0-CDB5B3B3CC83</keyObject>
 <referredKeyID>2CE1480A-63B5-E764-1DF0-CDB5B3B3CC83</referredKeyID>
-<mandatory>true</mandatory>
+<mandatory>false</mandatory>
 <refColNames>cedulaFuncionario</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>

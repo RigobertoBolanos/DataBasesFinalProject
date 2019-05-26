@@ -39,45 +39,20 @@
 <colAssociation fkAssociation="D935A4A2-3EF7-0252-2658-F868767099B0" referredColumn="15FCE7A6-43F5-C164-E872-0CF97E8B5FE2"/>
 </associations>
 </Column>
-<Column name="Constantes_nombreConstante" id="2727ABBB-4DE8-F50A-4429-6CC4AC94FAA8">
+<Column name="Constantes_codigoConstante" id="64D3A639-6589-0AC9-3B07-3513FED81BC2">
 <createdBy>Juan Diego</createdBy>
-<createdTime>2019-05-25 17:31:14 UTC</createdTime>
-<comment>Tipo de servicio del producto</comment>
+<createdTime>2019-05-25 21:14:02 UTC</createdTime>
 <ownerDesignName>Hole</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
+<dataTypeSize>2</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="C9290C7E-AD3D-68D2-0E79-38AF5C9EF710" referredColumn="395D0616-A885-C902-F5F1-F9533C9BE064"/>
+<colAssociation fkAssociation="C9290C7E-AD3D-68D2-0E79-38AF5C9EF710" referredColumn="67A3C419-D475-C539-EE49-996B99B1F9E8"/>
 </associations>
-</Column>
-<Column name="fecha_inicio" id="E799E310-68C0-E8EE-BA2B-DEF7A3850C54">
-<createdBy>hp</createdBy>
-<createdTime>2019-05-25 22:29:30 UTC</createdTime>
-<commentInRDBMS>Fecha inicio</commentInRDBMS>
-<ownerDesignName>Hole</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="fecha_retiro" id="A23F07DB-F878-A515-74B3-0888116BD8C4">
-<createdBy>hp</createdBy>
-<createdTime>2019-05-25 22:29:30 UTC</createdTime>
-<commentInRDBMS>Fecha retiro</commentInRDBMS>
-<ownerDesignName>Hole</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
@@ -91,7 +66,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="5202B4C6-23A4-ED47-1E55-F608E9235014"/>
-<colUsage columnID="AF350979-89D3-C4A5-DD70-12B09EEE9885"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="BEC1D8A4-3548-73B6-978A-C294EE2844BE" name="ProdCli_Cliente_FK">
@@ -113,7 +87,7 @@
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="2727ABBB-4DE8-F50A-4429-6CC4AC94FAA8"/>
+<colUsage columnID="64D3A639-6589-0AC9-3B07-3513FED81BC2"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

@@ -86,6 +86,7 @@
 <commentInRDBMS>Cedula del funcionario al que se asigno la solicitud</commentInRDBMS>
 <generatorID>EE7BE655-B022-5F47-9030-036BA5E17059</generatorID>
 <ownerDesignName>Hole</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -127,24 +128,6 @@
 <colAssociation fkAssociation="C89D690F-66C6-AEAF-A890-4A18CB998050" referredColumn="5202B4C6-23A4-ED47-1E55-F608E9235014"/>
 </associations>
 </Column>
-<Column name="ProdCli_cedulaCliente" id="69B4D501-272F-1E9E-B2AF-28AFB8A12BBD">
-<createdBy>Juan Diego</createdBy>
-<createdTime>2019-05-19 04:08:25 UTC</createdTime>
-<comment>Cedula del cliente</comment>
-<generatorID>40646C7D-BF42-CF00-3CFC-EFCA3770F2BE</generatorID>
-<ownerDesignName>Hole</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="C89D690F-66C6-AEAF-A890-4A18CB998050" referredColumn="AF350979-89D3-C4A5-DD70-12B09EEE9885"/>
-</associations>
-</Column>
 <Column name="IdSolicitud" id="F1AE99FB-0524-252D-11BC-BFCB3932AC3B">
 <createdBy>Juan Diego</createdBy>
 <createdTime>2019-05-19 18:39:56 UTC</createdTime>
@@ -179,7 +162,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="D3848FF0-7C5A-B337-D0E6-CC756B97E5EB"/>
-<colUsage columnID="69B4D501-272F-1E9E-B2AF-28AFB8A12BBD"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="B11FBA14-4721-D17D-9E8F-C642249F6EDC" name="Solicitud_Cliente_FK">

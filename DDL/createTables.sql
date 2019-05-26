@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 18.4.0.339.1532
---   en:        2019-05-25 17:30:05 COT
+--   en:        2019-05-25 20:23:29 COT
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
@@ -16,26 +16,23 @@ CREATE TABLE cliente (
 ALTER TABLE cliente ADD CONSTRAINT cliente_pk PRIMARY KEY ( cedulacliente );
 
 CREATE TABLE conssoli (
-    solicitud_cedulacliente       VARCHAR2(20) NOT NULL,
-    solicitud_cedulafuncionario   VARCHAR2(20) NOT NULL,
-    solicitud_idsolicitud         VARCHAR2(8) NOT NULL,
-    constantes_nombreconstante    VARCHAR2(20) NOT NULL
+    solicitud_idsolicitud        VARCHAR2(8) NOT NULL,
+    constantes_codigoconstante   VARCHAR2(2) NOT NULL
 );
 
-ALTER TABLE conssoli
-    ADD CONSTRAINT conssoli_pk PRIMARY KEY ( solicitud_cedulacliente,
-                                             solicitud_cedulafuncionario,
-                                             constantes_nombreconstante );
+ALTER TABLE conssoli ADD CONSTRAINT conssoli_pk PRIMARY KEY ( solicitud_idsolicitud,
+                                                              constantes_codigoconstante );
 
 CREATE TABLE constantes (
-    nombreconstante   VARCHAR2(20) NOT NULL,
-    valor             VARCHAR2(20) NOT NULL
+    nombreconstante   VARCHAR2(15) NOT NULL,
+    valor             VARCHAR2(20) NOT NULL,
+    codigoconstante   VARCHAR2(2) NOT NULL
 );
 
 COMMENT ON COLUMN constantes.nombreconstante IS
     'Nombre de la constante';
 
-ALTER TABLE constantes ADD CONSTRAINT constantes_pk PRIMARY KEY ( nombreconstante );
+ALTER TABLE constantes ADD CONSTRAINT constantes_pk PRIMARY KEY ( codigoconstante );
 
 CREATE TABLE funcionario (
     cedulafuncionario   VARCHAR2(20) NOT NULL,
@@ -50,22 +47,13 @@ ALTER TABLE funcionario ADD CONSTRAINT funcionario_pk PRIMARY KEY ( cedulafuncio
 CREATE TABLE prodcli (
     codigoproducto               NUMBER(8) NOT NULL,
     cliente_cedulacliente        VARCHAR2(20) NOT NULL,
-    constantes_nombreconstante   VARCHAR2(20) NOT NULL,
-    fecha_inicio                 DATE,
-    fecha_retiro                 DATE
+    constantes_codigoconstante   VARCHAR2(2) NOT NULL
 );
 
 COMMENT ON COLUMN prodcli.codigoproducto IS
     'Codigo del producto';
 
-COMMENT ON COLUMN prodcli.fecha_inicio IS
-    'Fecha inicio';
-
-COMMENT ON COLUMN prodcli.fecha_retiro IS
-    'Fecha retiro';
-
-ALTER TABLE prodcli ADD CONSTRAINT prodcli_pk PRIMARY KEY ( codigoproducto,
-                                                            cliente_cedulacliente );
+ALTER TABLE prodcli ADD CONSTRAINT prodcli_pk PRIMARY KEY ( codigoproducto );
 
 CREATE TABLE solicitud (
     fechacreacion                   DATE NOT NULL,
@@ -73,10 +61,9 @@ CREATE TABLE solicitud (
     observaciones                   VARCHAR2(140),
     estado                          VARCHAR2(15) NOT NULL,
     cliente_cedulacliente           VARCHAR2(20) NOT NULL,
-    funcionario_cedulafuncionario   VARCHAR2(20) NOT NULL,
+    funcionario_cedulafuncionario   VARCHAR2(20),
     tiposolicitud                   VARCHAR2(20) NOT NULL,
     prodcli_codigoproducto          NUMBER(8),
-    prodcli_cedulacliente           VARCHAR2(20),
     idsolicitud                     VARCHAR2(8) NOT NULL
 );
 
@@ -104,8 +91,8 @@ COMMENT ON COLUMN solicitud.tiposolicitud IS
 ALTER TABLE solicitud ADD CONSTRAINT solicitud_pk PRIMARY KEY ( idsolicitud );
 
 ALTER TABLE conssoli
-    ADD CONSTRAINT conssoli_constantes_fk FOREIGN KEY ( constantes_nombreconstante )
-        REFERENCES constantes ( nombreconstante );
+    ADD CONSTRAINT conssoli_constantes_fk FOREIGN KEY ( constantes_codigoconstante )
+        REFERENCES constantes ( codigoconstante );
 
 ALTER TABLE conssoli
     ADD CONSTRAINT conssoli_solicitud_fk FOREIGN KEY ( solicitud_idsolicitud )
@@ -116,8 +103,8 @@ ALTER TABLE prodcli
         REFERENCES cliente ( cedulacliente );
 
 ALTER TABLE prodcli
-    ADD CONSTRAINT prodcli_constantes_fk FOREIGN KEY ( constantes_nombreconstante )
-        REFERENCES constantes ( nombreconstante );
+    ADD CONSTRAINT prodcli_constantes_fk FOREIGN KEY ( constantes_codigoconstante )
+        REFERENCES constantes ( codigoconstante );
 
 ALTER TABLE solicitud
     ADD CONSTRAINT solicitud_cliente_fk FOREIGN KEY ( cliente_cedulacliente )
@@ -128,10 +115,8 @@ ALTER TABLE solicitud
         REFERENCES funcionario ( cedulafuncionario );
 
 ALTER TABLE solicitud
-    ADD CONSTRAINT solicitud_prodcli_fk FOREIGN KEY ( prodcli_codigoproducto,
-                                                      prodcli_cedulacliente )
-        REFERENCES prodcli ( codigoproducto,
-                             cliente_cedulacliente );
+    ADD CONSTRAINT solicitud_prodcli_fk FOREIGN KEY ( prodcli_codigoproducto )
+        REFERENCES prodcli ( codigoproducto );
 
 
 
