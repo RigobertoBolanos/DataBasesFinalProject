@@ -1,8 +1,8 @@
 CREATE OR REPLACE PACKAGE pkProductoCliente as
 PROCEDURE pInsertar(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2, ivConstantes_codigoconstante VARCHAR2);
-PROCEDURE pBorrar(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2);
+PROCEDURE pBorrar(ivCodigoProducto NUMBER);
 PROCEDURE pModificar(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2, ivConstantes_codigoconstante VARCHAR2);
-FUNCTION fConsultar(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2) RETURN VARCHAR2;
+FUNCTION fConsultar(ivCodigoProducto NUMBER) RETURN VARCHAR2;
 END pkProductoCliente;
 /
 
@@ -23,7 +23,7 @@ END pBorrar;
 PROCEDURE pModificar(ivCodigoProducto NUMBER, ivCliente_cedulacliente VARCHAR2, ivConstantes_codigoconstante VARCHAR2)
 IS
 BEGIN 
-    UPDATE PRODCLI SET PRODCLI.constantes_nombreconstante = ivConstantes_codigoconstante WHERE PRODCLI.codigoProducto = ivCodigoProducto;  
+    UPDATE PRODCLI SET prodcli.constantes_codigoconstante = ivConstantes_codigoconstante WHERE PRODCLI.codigoProducto = ivCodigoProducto;  
 END pModificar;
 
 FUNCTION fConsultar(ivCodigoProducto NUMBER) RETURN VARCHAR2
@@ -36,12 +36,13 @@ ovCodigoProductoCliente NUMBER(8);
 ovCliente_cedulacliente VARCHAR2(20);
 ovConstantes_codigoconstante VARCHAR2(20);
 ovFechaInicio DATE;
+ovFechaRetiro DATE;
 BEGIN
     OPEN cuProductoClienteBuscado;
-    FETCH cuProductoClienteBuscado INTO ovCodigoProductoCliente, ovCliente_cedulacliente, ovConstantes_codigoconstante, ovFechaInicio;
+    FETCH cuProductoClienteBuscado INTO ovCodigoProductoCliente, ovCliente_cedulacliente, ovConstantes_codigoconstante, ovFechaInicio, ovFechaRetiro;
     CLOSE cuProductoClienteBuscado;
     
-    RETURN ovCodigoProductoCliente || ' ' || ovCliente_cedulacliente || ' ' || ovConstantes_codigoconstante || ' ' || TO_CHAR(ovFechaInicio);
+    RETURN ovCodigoProductoCliente || ' ' || ovCliente_cedulacliente || ' ' || ovConstantes_codigoconstante || ' ' || TO_CHAR(ovFechaInicio) || ' ' || TO_CHAR(ovFechaRetiro);
 END fConsultar;
 
 END pkProductoCliente;
