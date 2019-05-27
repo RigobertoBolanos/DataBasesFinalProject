@@ -11,7 +11,7 @@ public class Constantes {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("DROP TABLE CONSTANTES CASCADE constraints");
+			stmt.execute("DROP TABLE CONSTANTES CASCADE constraints");
 			System.out.println("Se borro la tabla constantes");
 			
 		} catch (SQLException e) {
@@ -25,7 +25,7 @@ public class Constantes {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.pregistrarconstante('"+codigoConstante+"','"+nombreConstante+"','"+valor+"')");
+			stmt.execute("BEGIN pkregistronivel2.pRegistrarConstante('"+codigoConstante+"','"+nombreConstante+"','"+valor+"'); END;");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -38,7 +38,7 @@ public class Constantes {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.pactualizarconstante('"+codigoConstante+"','"+nombreConstante+"','"+valor+"')");
+			stmt.execute("BEGIN pkregistronivel2.pactualizarconstante('"+codigoConstante+"','"+nombreConstante+"','"+valor+"'); END;");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -51,7 +51,7 @@ public class Constantes {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.pborrarconstante('"+codigoConstante+"')");
+			stmt.execute("BEGIN pkregistronivel2.pborrarconstante('"+codigoConstante+"'); END;");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -64,7 +64,7 @@ public class Constantes {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.flistarconstantes");
+			ResultSet rs = stmt.executeQuery("BEGIN pkregistronivel2.flistarconstantes; END;");
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -11,7 +11,7 @@ public class ProductoCliente {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("DROP TABLE PRODCLI CASCADE constraints");
+			stmt.execute("DROP TABLE PRODCLI CASCADE constraints");
 			System.out.println("Se borro la tabla producto cliente");
 			
 		} catch (SQLException e) {
@@ -25,7 +25,7 @@ public class ProductoCliente {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.pregistrarproductocliente("+codigoProducto+",'"+cedulaCliente+"','"+codigoConstante+"')");
+			stmt.execute("BEGIN pkregistronivel2.pregistrarproductocliente("+codigoProducto+",'"+cedulaCliente+"','"+codigoConstante+"'); END;");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -38,7 +38,7 @@ public class ProductoCliente {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.pactualizarproductocliente('"+codigoProducto+"','"+cedulaCliente+"','"+codigoConstante+"')");
+			stmt.execute("BEGIN pkregistronivel2.pactualizarproductocliente('"+codigoProducto+"','"+cedulaCliente+"','"+codigoConstante+"'); END;");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -51,7 +51,7 @@ public class ProductoCliente {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.pborrarproductocliente('"+codigoProducto+"')");
+			stmt.execute("BEGIN pkregistronivel2.pborrarproductocliente('"+codigoProducto+"'); END;");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -10,7 +10,7 @@ public class Solicitud {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("DROP TABLE SOLICITUD CASCADE constraints");
+			stmt.execute("DROP TABLE SOLICITUD CASCADE constraints");
 			System.out.println("Se borro la tabla solicitud");
 			
 		} catch (SQLException e) {
@@ -25,7 +25,7 @@ public class Solicitud {
 		{
 			String idSolicitud = "";
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("EXECUTE pkRegistroNivel2.pregistrarsolicitud('"+observaciones+"','"+estado+"','"+cedulaCliente+"','"+tipoSolicitud+"','"+codigoProducto+"','"+idSolicitud+"')");
+			stmt.execute("BEGIN pkRegistroNivel2.pregistrarsolicitud('"+observaciones+"','"+estado+"','"+cedulaCliente+"','"+tipoSolicitud+"','"+codigoProducto+"','"+idSolicitud+"'); END;");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -39,7 +39,7 @@ public class Solicitud {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("EXECUTE pkRegistroNivel2.pactualizarsolicitud('"+observaciones+"','"+estado+"','"+cedulaCliente+"','"+cedulaFuncionario+"','"+tipoSolicitud+"','"+codigoProducto+"','"+idSolicitud+"')");
+			stmt.execute("BEGIN pkRegistroNivel2.pactualizarsolicitud('"+observaciones+"','"+estado+"','"+cedulaCliente+"','"+cedulaFuncionario+"','"+tipoSolicitud+"','"+codigoProducto+"','"+idSolicitud+"'); END;");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -53,7 +53,7 @@ public class Solicitud {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("EXECUTE pkRegistroNivel2.pborrarsolicitud('"+idSolicitud+"')");
+			stmt.execute("BEGIN pkRegistroNivel2.pborrarsolicitud('"+idSolicitud+"'); END;");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

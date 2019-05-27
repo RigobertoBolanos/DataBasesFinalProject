@@ -11,7 +11,7 @@ public class ConstantesSolicitud {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("DROP TABLE CONSSOLI CASCADE constraints");
+			stmt.execute("DROP TABLE CONSSOLI CASCADE constraints");
 			System.out.println("Se borro la tabla Constantes solicitud");
 			
 		} catch (SQLException e) {
@@ -25,7 +25,7 @@ public class ConstantesSolicitud {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.pregistrarconstantessolicitud('"+idSolicitud+"','"+codigoConstante+"')");
+			stmt.execute("BEGIN pkregistronivel2.pregistrarconstantessolicitud('"+idSolicitud+"','"+codigoConstante+"'); END;");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -38,7 +38,7 @@ public class ConstantesSolicitud {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.pactualizarconstantessolicitud('"+idSolicitud+"','"+codigoConstante+"')");
+			stmt.execute("BEGIN pkregistronivel2.pactualizarconstantessolicitud('"+idSolicitud+"','"+codigoConstante+"'); END;");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -51,7 +51,7 @@ public class ConstantesSolicitud {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.pborrarconstantessolicitud('"+idSolicitud+"','"+codigoConstante+"')");
+			stmt.execute("BEGIN pkregistronivel2.pborrarconstantessolicitud('"+idSolicitud+"','"+codigoConstante+"'); END;");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
