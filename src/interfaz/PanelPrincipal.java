@@ -112,6 +112,16 @@ public class PanelPrincipal {
 		});
 		btnNewButton_2.setBounds(24, 122, 125, 23);
 		frmProyectoBasesDe.getContentPane().add(btnNewButton_2);
+		
+		JButton btnConsultas = new JButton("Consultas");
+		btnConsultas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PanelConsultas consultas=new PanelConsultas();
+				consultas.setVisible(true);
+			}
+		});
+		btnConsultas.setBounds(244, 121, 125, 25);
+		frmProyectoBasesDe.getContentPane().add(btnConsultas);
 	}
 	
 	
