@@ -212,7 +212,7 @@ public class PanelCrearSolicitud extends JFrame {
 			Connection con = conexion.getConexion();
 			Constantes constantes = new Constantes();
 			
-		} catch (SQLException e1) {
+		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
 		
