@@ -8,8 +8,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import jdk.jfr.events.FileWriteEvent;
 import modelo.ConexionOracle;
 import modelo.Constantes;
+import modelo.ConstantesSolicitud;
 import modelo.Solicitud;
 
 import javax.swing.JComboBox;
@@ -17,9 +19,16 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.nio.Buffer;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Types;
 import java.awt.event.ActionEvent;
 import java.awt.GridLayout;
 import javax.swing.JRadioButton;
@@ -50,7 +59,7 @@ public class PanelCrearSolicitud extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		rdbtnCreacin = new JRadioButton(Constantes.CREACION);
+		rdbtnCreacin = new JRadioButton("Creación");
 		rdbtnCreacin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
@@ -69,7 +78,7 @@ public class PanelCrearSolicitud extends JFrame {
 		rdbtnCreacin.setBounds(12, 32, 79, 25);
 		contentPane.add(rdbtnCreacin);
 		
-		rdbtnModificacin = new JRadioButton(Constantes.MODIFICACION);
+		rdbtnModificacin = new JRadioButton("Modificación");
 		rdbtnModificacin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
@@ -88,7 +97,7 @@ public class PanelCrearSolicitud extends JFrame {
 		rdbtnModificacin.setBounds(95, 32, 99, 25);
 		contentPane.add(rdbtnModificacin);
 		
-		rdbtnCancelacin = new JRadioButton(Constantes.CANCELACION);
+		rdbtnCancelacin = new JRadioButton("Cancelación");
 		rdbtnCancelacin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -107,7 +116,7 @@ public class PanelCrearSolicitud extends JFrame {
 		rdbtnCancelacin.setBounds(198, 32, 99, 25);
 		contentPane.add(rdbtnCancelacin);
 		
-		rdbtnDao = new JRadioButton(Constantes.DANIO);
+		rdbtnDao = new JRadioButton("Daño");
 		rdbtnDao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -126,7 +135,7 @@ public class PanelCrearSolicitud extends JFrame {
 		rdbtnDao.setBounds(301, 32, 57, 25);
 		contentPane.add(rdbtnDao);
 		
-		rdbtnReclamo = new JRadioButton(Constantes.RECLAMO);
+		rdbtnReclamo = new JRadioButton("Reclamo");
 		rdbtnReclamo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -188,32 +197,61 @@ public class PanelCrearSolicitud extends JFrame {
 			{
 				ConexionOracle conexion = new ConexionOracle();
 				Solicitud solicitud = new Solicitud();
+				ConstantesSolicitud conssoli = new ConstantesSolicitud();
 				//INFORMACION NECESARIO PARA LA SOLICUTD
 				String tipoSolicitud = "";
 				String observaciones = txtaObservaciones.getText();
 				String cedulaCliente = txtCedulaCliente.getText().trim();
 				String codigoProducto = txtCodigoProducto.getText().trim();
+				String tipoServicio = "";
 				if(rdbtnCancelacin.isSelected())
 				{
-					tipoSolicitud = rdbtnCancelacin.getText();
+					tipoSolicitud = Constantes.CANCELACION;
 				}
 				else if(rdbtnCreacin.isSelected())
 				{
-					tipoSolicitud = rdbtnCreacin.getText();
+					tipoSolicitud = Constantes.CREACION;
 				}
 				else if(rdbtnDao.isSelected())
 				{
-					tipoSolicitud = rdbtnDao.getText();
+					tipoSolicitud = Constantes.DANIO;
 				}
 				else if(rdbtnModificacin.isSelected())
 				{
-					tipoSolicitud = rdbtnModificacin.getText();
+					tipoSolicitud = Constantes.MODIFICACION;
 				}
 				else if(rdbtnReclamo.isSelected())
 				{
-					tipoSolicitud = rdbtnReclamo.getText();
+					tipoSolicitud = Constantes.RECLAMO;
 				}
-				solicitud.insertar(conexion.getConexion(), observaciones, "01", cedulaCliente, tipoSolicitud, codigoProducto);
+				if(cmbTipoProducto.getSelectedItem().toString().equals("VOZ"))
+				{
+					tipoServicio = Constantes.VOZ;
+				}
+				else if(cmbTipoProducto.getSelectedItem().toString().equals("DATOS"))
+				{
+					tipoServicio = Constantes.DATOS;
+				}
+				else if(cmbTipoProducto.getSelectedItem().toString().equals("INTEGRADO"))
+				{
+					tipoServicio = Constantes.INTEGRADO;
+				}
+				CallableStatement cs = null;
+				String idSolicitud = "";
+				try
+				{
+					Statement stmt = conexion.getConexion().createStatement();
+					cs = conexion.getConexion().prepareCall("{? = call pkRegistroNivel2.fnumerosolicitud()}");
+					cs.registerOutParameter(1, Types.VARCHAR);
+					cs.execute();
+					idSolicitud = cs.getString(1);
+				}catch (Exception e2) {
+					e2.printStackTrace();
+				}
+				System.out.println(idSolicitud);
+				solicitud.insertar(conexion.getConexion(), observaciones, "01", cedulaCliente, tipoSolicitud, codigoProducto, idSolicitud);
+				conssoli.insertar(conexion.getConexion(), idSolicitud, "01");
+				conssoli.insertar(conexion.getConexion(), idSolicitud, tipoSolicitud);
 			}
 		});
 		btnRegistrarSolicitud.setBounds(12, 326, 141, 25);
@@ -232,7 +270,7 @@ public class PanelCrearSolicitud extends JFrame {
 		
 		cmbTipoProducto = new JComboBox();
 		cmbTipoProducto.setEnabled(false);
-		cmbTipoProducto.setModel(new DefaultComboBoxModel(new String[] {Constantes.VOZ, Constantes.DATOS, Constantes.INTEGRADO}));
+		cmbTipoProducto.setModel(new DefaultComboBoxModel(new String[] {"VOZ", "DATOS", "INTEGRADO"}));
 		cmbTipoProducto.setBounds(143, 164, 116, 22);
 		contentPane.add(cmbTipoProducto);
 		

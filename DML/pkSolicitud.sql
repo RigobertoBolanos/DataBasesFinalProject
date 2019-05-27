@@ -9,12 +9,10 @@ END pkSolicitud;
 CREATE OR REPLACE PACKAGE BODY pkSolicitud AS -- body
 
 -- Implementación Procedimiento 1
-PROCEDURE pInsertar
-(ivFechaCreacion DATE, ivFechaAsignacion DATE, ivObservaciones VARCHAR2, ivEstado VARCHAR2, ivCliente_cedulaCliente VARCHAR2, ivFuncionario_cedulaFuncionario VARCHAR2, ivTipoSolicitud VARCHAR2, ivProdCli_codigoProducto NUMBER, ivIdSolicitud VARCHAR2)
+PROCEDURE pInsertar(ivFechaCreacion DATE, ivFechaAsignacion DATE, ivObservaciones VARCHAR2, ivEstado VARCHAR2, ivCliente_cedulaCliente VARCHAR2, ivFuncionario_cedulaFuncionario VARCHAR2, ivTipoSolicitud VARCHAR2, ivProdCli_codigoProducto NUMBER, ivIdSolicitud VARCHAR2)
 IS
 BEGIN
-    INSERT INTO SOLICITUD
-    VALUES (ivFechaCreacion , ivFechaAsignacion , ivObservaciones , ivEstado , ivCliente_cedulaCliente , ivFuncionario_cedulaFuncionario , ivTipoSolicitud , ivProdCli_codigoProducto, ivIdSolicitud );
+    INSERT INTO SOLICITUD VALUES (ivFechaCreacion , ivFechaAsignacion , ivObservaciones , ivEstado , ivCliente_cedulaCliente , ivFuncionario_cedulaFuncionario , ivTipoSolicitud , ivProdCli_codigoProducto, ivIdSolicitud );
 END pInsertar;
 
 -- Implementación Procedimiento 2

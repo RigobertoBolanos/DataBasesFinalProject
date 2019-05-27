@@ -16,11 +16,11 @@ public class InterfazPrincipal {
 			Statement stmt = con.createStatement();
 			//ELIMINACION DE TABLAS
 			ResultSet rs = stmt.executeQuery("DROP TABLE CLIENTE CASCADE CONSTRAINTS");
-			rs = stmt.executeQuery("DROP TABLE CONSSOLI CASCADE CONSTRAINTS");
-			rs = stmt.executeQuery("DROP TABLE CONSTANTES CASCADE CONSTRAINTS");
-			rs = stmt.executeQuery("DROP TABLE FUNCIONARIO CASCADE CONSTRAINTS");
-			rs = stmt.executeQuery("DROP TABLE PRODCLI CASCADE CONSTRAINTS");
-			rs = stmt.executeQuery("DROP TABLE SOLICITUD CASCADE CONSTRAINTS");
+			stmt.execute("DROP TABLE CONSSOLI CASCADE CONSTRAINTS");
+			stmt.execute("DROP TABLE CONSTANTES CASCADE CONSTRAINTS");
+			stmt.execute("DROP TABLE FUNCIONARIO CASCADE CONSTRAINTS");
+			stmt.execute("DROP TABLE PRODCLI CASCADE CONSTRAINTS");
+			stmt.execute("DROP TABLE SOLICITUD CASCADE CONSTRAINTS");
 			//CREACION TABLA CLIENTE
 			stmt = con.createStatement();
 			rs = stmt.executeQuery("CREATE TABLE cliente (\r\n" + 
