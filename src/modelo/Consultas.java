@@ -91,12 +91,13 @@ public class Consultas {
 			+"ORDER BY prodcli.cliente_cedulacliente"
 					);
 
-			System.out.println("ID SOLICITUD \t CEDULA CLIENTE");
+			
+			System.out.println("CODIGO PRODUCTO \t CÉDULA CLIENTE");
 			while(rs.next()) {
-				String idSolicitud = rs.getString("ID_SOLICITUD");
+				String codigoProducto = rs.getString("CODIGO_PRODUCTO");
 				String cedulaCliente= rs.getString("Cedula_Cliente");
 				
-				System.out.println(idSolicitud + "\t"+ cedulaCliente);
+				System.out.println(codigoProducto + "\t"+ cedulaCliente);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
