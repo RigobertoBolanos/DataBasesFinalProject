@@ -26,6 +26,7 @@ FUNCTION fSolicitudXFuncionario RETURN VARCHAR2;
 FUNCTION fSolicitudXEstado RETURN VARCHAR2;
 FUNCTION fSolicitudXTipo RETURN VARCHAR2;
 FUNCTION fProductosXCliente RETURN VARCHAR2;
+FUNCTION fNumeroSolicitud RETURN VARCHAR2;
 
 
 END pkRegistroNivel2;
@@ -250,4 +251,31 @@ ovConsulta :='';
     
 RETURN ovConsulta;
 END fProductosXCliente;
+
+FUNCTION fNumeroSolicitud RETURN VARCHAR2
+IS
+    CURSOR cuConsulta IS
+        SELECT solicitud.idsolicitud as "ID SOLICITUD"
+        FROM solicitud  
+        ORDER BY solicitud.idsolicitud;
+        
+vIdSolicitud VARCHAR2(8);
+vCantidad NUMBER(2);
+ovConsulta VARCHAR2(3);
+BEGIN
+ovConsulta :='';
+   vCantidad :=0; 
+    OPEN cuConsulta;
+     LOOP
+        FETCH cuConsulta INTO vIdSolicitud ;
+        EXIT WHEN cuConsulta%NOTFOUND;
+        vCantidad:= vCantidad+1;
+     END LOOP;    
+    CLOSE cuConsulta;
+    vCantidad:= vCantidad+1;
+    ovConsulta:= TO_CHAR(vCantidad);
+RETURN ovConsulta;
+END fNumeroSolicitud;
+
+
 END pkRegistroNivel2;
