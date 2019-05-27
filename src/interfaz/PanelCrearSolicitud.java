@@ -245,13 +245,14 @@ public class PanelCrearSolicitud extends JFrame {
 					cs.registerOutParameter(1, Types.VARCHAR);
 					cs.execute();
 					idSolicitud = cs.getString(1);
+					System.out.println(idSolicitud);
+					solicitud.insertar(conexion.getConexion(), observaciones, "01", cedulaCliente, tipoSolicitud, codigoProducto, idSolicitud);
+					conssoli.insertar(conexion.getConexion(), idSolicitud, "01");
+					conssoli.insertar(conexion.getConexion(), idSolicitud, tipoSolicitud);
 				}catch (Exception e2) {
 					e2.printStackTrace();
 				}
-				System.out.println(idSolicitud);
-				solicitud.insertar(conexion.getConexion(), observaciones, "01", cedulaCliente, tipoSolicitud, codigoProducto, idSolicitud);
-				conssoli.insertar(conexion.getConexion(), idSolicitud, "01");
-				conssoli.insertar(conexion.getConexion(), idSolicitud, tipoSolicitud);
+				
 			}
 		});
 		btnRegistrarSolicitud.setBounds(12, 326, 141, 25);
