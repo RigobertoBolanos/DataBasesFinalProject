@@ -1,9 +1,11 @@
 package interfaz;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextPane;
 import java.awt.Panel;
@@ -13,6 +15,7 @@ import java.awt.event.ActionEvent;
 public class PanelPrincipal {
 
 	private JFrame frmProyectoBasesDe;
+	
 
 	/**
 	 * Launch the application.
@@ -75,12 +78,15 @@ public class PanelPrincipal {
 		JButton btnNewButton_2 = new JButton("Atender Solicitud");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				PanelAtencion atencion=new PanelAtencion();
+				atencion.setVisible(true);
 				
 			}
 		});
 		btnNewButton_2.setBounds(24, 122, 125, 23);
 		frmProyectoBasesDe.getContentPane().add(btnNewButton_2);
 	}
+	
 	
 	
 }
