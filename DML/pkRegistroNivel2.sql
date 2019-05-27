@@ -22,6 +22,12 @@ PROCEDURE pActualizarFuncionario(ivCedulaFuncionarioDada VARCHAR2, ivNuevoNombre
 
 FUNCTION fListarConstantes RETURN VARCHAR2;
 
+FUNCTION fSolicitudXFuncionario RETURN VARCHAR2;
+FUNCTION fSolicitudXEstado RETURN VARCHAR2;
+FUNCTION fSolicitudXTipo RETURN VARCHAR2;
+FUNCTION fProductosXCliente RETURN VARCHAR2;
+
+
 END pkRegistroNivel2;
 /
 CREATE OR REPLACE PACKAGE BODY pkRegistroNivel2 as
@@ -142,5 +148,106 @@ BEGIN
         RETURN pkconstantes.flistarconstantes;
 END fListarConstantes;
 
+--Solicitud x Funcionario
+FUNCTION fSolicitudXFuncionario RETURN VARCHAR2
+IS
+    CURSOR cuSolicitudXFuncionario IS
+        SELECT solicitud.idsolicitud as "ID SOLICITUD", funcionario.nombre as " Nombre Funcionario"
+        FROM solicitud  INNER JOIN funcionario  on solicitud.funcionario_cedulafuncionario = funcionario.cedulafuncionario
+        WHERE solicitud.estado = '02'
+        ORDER BY solicitud.funcionario_cedulafuncionario;
+        
+vIdSolicitud VARCHAR2(8);
+vNombreFuncionario  VARCHAR2(30);
+ovConsulta VARCHAR2(100);
+BEGIN
+ovConsulta :='';
+    
+    OPEN cuSolicitudXFuncionario;
+     LOOP
+        FETCH cuSolicitudXFuncionario INTO vIdSolicitud, vNombreFuncionario ;
+        EXIT WHEN cuSolicitudXFuncionario%NOTFOUND;
+        ovConsulta:= ovConsulta|| vIdSolicitud|| ' '||vNombreFuncionario||',';
+     END LOOP;    
+    CLOSE cuSolicitudXFuncionario;
+    
+RETURN ovConsulta;
+END fSolicitudXFuncionario;
 
+--Solicitud x Estado
+FUNCTION fSolicitudXEstado RETURN VARCHAR2
+IS
+    CURSOR cuConsulta IS
+        SELECT solicitud.idsolicitud as "ID SOLICITUD", constantes.valor as " Estado Solicitud"
+        FROM solicitud INNER JOIN constantes on solicitud.estado = constantes.codigoconstante
+        ORDER BY solicitud.estado;
+        
+vIdSolicitud VARCHAR2(8);
+vEstado  VARCHAR2(30);
+ovConsulta VARCHAR2(100);
+BEGIN
+ovConsulta :='';
+    
+    OPEN cuConsulta;
+     LOOP
+        FETCH cuConsulta INTO vIdSolicitud, vEstado ;
+        EXIT WHEN cuConsulta%NOTFOUND;
+
+        ovConsulta:= ovConsulta|| vIdSolicitud|| ' '||vEstado||',';
+     END LOOP;    
+    CLOSE cuConsulta;
+    DBMS_OUTPUT.PUT_LINE(ovConsulta);
+    
+RETURN ovConsulta;
+END fSolicitudXEstado;
+
+--Solicitud x Tipo
+FUNCTION fSolicitudXTipo RETURN VARCHAR2
+IS
+    CURSOR cuConsulta IS
+        SELECT solicitud.idsolicitud as "ID SOLICITUD", solicitud.tiposolicitud as " Tipo Solicitud"
+        FROM solicitud  
+        ORDER BY solicitud.tiposolicitud;
+        
+vIdSolicitud VARCHAR2(8);
+vTipo  VARCHAR2(30);
+ovConsulta VARCHAR2(100);
+BEGIN
+ovConsulta :='';
+    
+    OPEN cuConsulta;
+     LOOP
+        FETCH cuConsulta INTO vIdSolicitud, vTipo ;
+        EXIT WHEN cuConsulta%NOTFOUND;
+        ovConsulta:= ovConsulta|| vIdSolicitud|| ' '||vTipo||',';
+     END LOOP;    
+    CLOSE cuConsulta;
+    
+RETURN ovConsulta;
+END fSolicitudXTipo;
+
+--Productos x Cliente
+FUNCTION fProductosXCliente RETURN VARCHAR2
+IS
+    CURSOR cuConsulta IS
+        SELECT prodcli.codigoproducto as "CODIGO PRODUCTO", prodcli.cliente_cedulacliente as " Cedula Cliente"
+        FROM prodcli  
+        ORDER BY prodcli.cliente_cedulacliente;
+        
+vCodigoProducto NUMBER(8);
+vCedulaCliente  VARCHAR2(20);
+ovConsulta VARCHAR2(100);
+BEGIN
+ovConsulta :='';
+    
+    OPEN cuConsulta;
+     LOOP
+        FETCH cuConsulta INTO vCodigoProducto, vCedulaCliente ;
+        EXIT WHEN cuConsulta%NOTFOUND;
+        ovConsulta:= ovConsulta|| TO_CHAR(vCodigoProducto)|| ' '||vCedulaCliente||',';
+     END LOOP;    
+    CLOSE cuConsulta;
+    
+RETURN ovConsulta;
+END fProductosXCliente;
 END pkRegistroNivel2;
