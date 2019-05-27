@@ -6,6 +6,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Consultas {
+	
+	/**
+	 * Consulta todas las solicitudes por funcionario
+	 * @param con es la conexion con la base de datos
+	 */
 
 	public static void solicitudesXFuncionario(Connection con) 
 	{
@@ -32,6 +37,11 @@ public class Consultas {
 
 	}
 	
+	/**
+	 * Consulta las solicitudes por su estado
+	 * @param con es la conexion con la base de datos
+	 */
+	
 	public static void solicitudesXEstado(Connection con) 
 	{
 		try {
@@ -57,6 +67,11 @@ public class Consultas {
 
 	}
 	
+	/**
+	 * Consulta las solicitudes por el tipo
+	 * @param con es la conexion con la base de datos
+	 */
+	
 	public static void solicitudesXTipo(Connection con) 
 	{
 		try {
@@ -81,6 +96,10 @@ public class Consultas {
 
 	}
 	
+	/**
+	 * Consulta los productos por el cliente
+	 * @param con es la conexion con la base de datos
+	 */
 	public static void productosXCliente(Connection con) 
 	{
 		try {
