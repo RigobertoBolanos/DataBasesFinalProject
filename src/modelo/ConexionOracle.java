@@ -1,3 +1,5 @@
+package modelo;
+
 import java.sql.*;
 
 public class ConexionOracle {
@@ -10,7 +12,7 @@ public class ConexionOracle {
 		{
 			
 			Connection con = DriverManager.getConnection(
-					"jdbc:Oracle:thin:@//172.16.0.103:1522/ESTUD",
+					"jdbc:Oracle:thin:@//200.3.193.24:1522/ESTUD",
 					"P09551_1_3",
 					"P09551_1_3_20191");
 			conexion=con;

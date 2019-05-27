@@ -190,26 +190,7 @@ public class PanelCrearSolicitud extends JFrame {
 				String observaciones = txtaObservaciones.getText();
 				String cedulaCliente = txtCedulaCliente.getText().trim();
 				String codigoProducto = txtCodigoProducto.getText().trim();
-				if(rdbtnCancelacin.isSelected())
-				{
-					tipoSolicitud = rdbtnCancelacin.getText();
-				}
-				else if(rdbtnCreacin.isSelected())
-				{
-					tipoSolicitud = rdbtnCreacin.getText();
-				}
-				else if(rdbtnDao.isSelected()) 
-				{
-					tipoSolicitud = rdbtnDao.getText();
-				}
-				else if(rdbtnModificacin.isSelected())
-				{
-					tipoSolicitud = rdbtnModificacin.getText();
-				}
-				else if(rdbtnReclamo.isSelected())
-				{
-					tipoSolicitud = rdbtnReclamo.getText();
-				}
+
 				
 				
 				
@@ -219,6 +200,8 @@ public class PanelCrearSolicitud extends JFrame {
 		});
 		btnRegistrarSolicitud.setBounds(12, 326, 141, 25);
 		contentPane.add(btnRegistrarSolicitud);
+		
+		
 		
 		cmbTipoProducto = new JComboBox();
 		cmbTipoProducto.setEnabled(false);
