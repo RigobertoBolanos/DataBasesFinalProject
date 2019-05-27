@@ -3,6 +3,7 @@ PROCEDURE pInsertar(ivCodigoConstante VARCHAR2, ivNombreConstante VARCHAR2, ivVa
 PROCEDURE pBorrar(ivCodigoConstante VARCHAR2);
 PROCEDURE pModificar(ivCodigoConstante VARCHAR2,ivNombreConstante VARCHAR2, ivValor VARCHAR2);
 FUNCTION fConsultar(ivCodigoConstante VARCHAR2) RETURN VARCHAR2;
+FUNCTION fListarConstantes RETURN VARCHAR2;
 END pkConstantes;
 /
 
@@ -43,5 +44,19 @@ BEGIN
     
     RETURN ovCodigoConstante || ' ' || ovNombreConstante || ' ' || ovValor;
 END fConsultar;
+
+FUNCTION fListarConstantes RETURN VARCHAR2
+IS  
+CURSOR cuListaConstantes is 
+    SELECT CONSTANTES.codigoConstante, CONSTANTES.nombreConstante
+    FROM CONSTANTES;
+vResultado VARCHAR2(500);
+BEGIN
+    FOR rc in cuListaConstantes
+        LOOP
+            Vresultado := Vresultado || rc.codigoConstante || ',' || rc.nombreConstante || '/';
+        END LOOP;
+    RETURN Vresultado;
+END fListarConstantes;
 
 END pkConstantes;

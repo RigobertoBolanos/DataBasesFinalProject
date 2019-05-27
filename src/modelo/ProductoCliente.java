@@ -25,7 +25,7 @@ public class ProductoCliente {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("pkregistronivel2.pregistrarproductocliente("+codigoProducto+","+cedulaCliente+","+codigoConstante+")");
+			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.pregistrarproductocliente("+codigoProducto+",'"+cedulaCliente+"','"+codigoConstante+"')");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -38,7 +38,7 @@ public class ProductoCliente {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("pkregistronivel2.pactualizarproductocliente("+codigoProducto+","+cedulaCliente+","+codigoConstante+")");
+			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.pactualizarproductocliente('"+codigoProducto+"','"+cedulaCliente+"','"+codigoConstante+"')");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -51,7 +51,7 @@ public class ProductoCliente {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("pkregistronivel2.pborrarproductocliente("+codigoProducto+")");
+			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.pborrarproductocliente('"+codigoProducto+"')");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

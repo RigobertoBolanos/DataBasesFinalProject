@@ -25,7 +25,7 @@ public class Cliente {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("pkRegistroNivel2.pregistrarcliente("+cedulaCliente+","+nombre+","+"TO_DATE("+fechaNacimiento+", 'DD/MM/YYYY'))"+","+direccion+","+telefono+")");
+			ResultSet rs = stmt.executeQuery("EXECUTE pkRegistroNivel2.pregistrarcliente('"+cedulaCliente+"','"+nombre+"','"+"TO_DATE('"+fechaNacimiento+"', 'DD/MM/YYYY'))"+",'"+direccion+"','"+telefono+"')");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -39,7 +39,7 @@ public class Cliente {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("pkRegistroNivel2.pactualizarcliente("+cedulaCliente+","+nombre+","+"TO_DATE("+fechaNacimiento+", 'DD/MM/YYYY'))"+","+direccion+","+telefono+")");
+			ResultSet rs = stmt.executeQuery("EXECUTE pkRegistroNivel2.pactualizarcliente('"+cedulaCliente+"','"+nombre+"',"+"TO_DATE('"+fechaNacimiento+"', 'DD/MM/YYYY'))"+",'"+direccion+"','"+telefono+"')");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -53,7 +53,7 @@ public class Cliente {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("pkRegistroNivel2.pborrarcliente("+cedulaCliente+")");
+			ResultSet rs = stmt.executeQuery("EXECUTE pkRegistroNivel2.pborrarcliente('"+cedulaCliente+"')");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

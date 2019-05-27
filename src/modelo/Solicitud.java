@@ -25,7 +25,7 @@ public class Solicitud {
 		{
 			String idSolicitud = "";
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("pkRegistroNivel2.pregistrarsolicitud("+observaciones+","+estado+","+cedulaCliente+","+tipoSolicitud+","+codigoProducto+","+idSolicitud+")");
+			ResultSet rs = stmt.executeQuery("EXECUTE pkRegistroNivel2.pregistrarsolicitud('"+observaciones+"','"+estado+"','"+cedulaCliente+"','"+tipoSolicitud+"','"+codigoProducto+"','"+idSolicitud+"')");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -39,7 +39,7 @@ public class Solicitud {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("pkRegistroNivel2.pactualizarsolicitud("+observaciones+","+estado+","+cedulaCliente+","+cedulaFuncionario+","+tipoSolicitud+","+codigoProducto+","+idSolicitud+")");
+			ResultSet rs = stmt.executeQuery("EXECUTE pkRegistroNivel2.pactualizarsolicitud('"+observaciones+"','"+estado+"','"+cedulaCliente+"','"+cedulaFuncionario+"','"+tipoSolicitud+"','"+codigoProducto+"','"+idSolicitud+"')");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -53,7 +53,7 @@ public class Solicitud {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("pkRegistroNivel2.pborrarsolicitud("+idSolicitud+")");
+			ResultSet rs = stmt.executeQuery("EXECUTE pkRegistroNivel2.pborrarsolicitud('"+idSolicitud+"')");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

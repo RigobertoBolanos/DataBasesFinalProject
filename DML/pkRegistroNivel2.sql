@@ -20,6 +20,7 @@ PROCEDURE pActualizarConstante(ivCodigoConstante VARCHAR2,ivNombreConstante VARC
 PROCEDURE pActualizarConstantesSolicitud(ivSolicitud_idsolicitud VARCHAR2, ivConstantes_codigoConstante VARCHAR2);
 PROCEDURE pActualizarFuncionario(ivCedulaFuncionarioDada VARCHAR2, ivNuevoNombre VARCHAR2, ivNuevaFechaNacimiento DATE, ivNuevaDireccion VARCHAR2, ivNuevoTelefono VARCHAR2);
 
+FUNCTION fListarConstantes RETURN VARCHAR2;
 
 END pkRegistroNivel2;
 /
@@ -134,5 +135,12 @@ BEGIN
     pksolicitud.pinsertar(SYSDATE ,null, ivObservaciones, ivEstado, ivCliente_cedulaCliente, null, ivTipoSolicitud, ivProdCli_codigoProducto, ivIdSolicitud);
     END IF;
 END pRegistrarSolicitud;
+
+FUNCTION fListarConstantes RETURN VARCHAR2
+IS
+BEGIN
+        RETURN pkconstantes.flistarconstantes;
+END fListarConstantes;
+
 
 END pkRegistroNivel2;

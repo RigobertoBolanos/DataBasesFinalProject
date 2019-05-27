@@ -25,7 +25,7 @@ public class ConstantesSolicitud {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("pkregistronivel2.pregistrarconstantessolicitud("+idSolicitud+","+codigoConstante+")");
+			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.pregistrarconstantessolicitud('"+idSolicitud+"','"+codigoConstante+"')");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -38,7 +38,7 @@ public class ConstantesSolicitud {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("pkregistronivel2.pactualizarconstantessolicitud("+idSolicitud+","+codigoConstante+")");
+			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.pactualizarconstantessolicitud('"+idSolicitud+"','"+codigoConstante+"')");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -51,7 +51,7 @@ public class ConstantesSolicitud {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("pkregistronivel2.pborrarconstantessolicitud("+idSolicitud+","+codigoConstante+")");
+			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.pborrarconstantessolicitud('"+idSolicitud+"','"+codigoConstante+"')");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

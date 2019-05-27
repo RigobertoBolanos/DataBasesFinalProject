@@ -25,7 +25,7 @@ public class Constantes {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("pkregistronivel2.pregistrarconstante("+codigoConstante+","+nombreConstante+","+valor+")");
+			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.pregistrarconstante('"+codigoConstante+"','"+nombreConstante+"','"+valor+"')");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -38,7 +38,7 @@ public class Constantes {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("pkregistronivel2.pactualizarconstante("+codigoConstante+","+nombreConstante+","+valor+")");
+			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.pactualizarconstante('"+codigoConstante+"','"+nombreConstante+"','"+valor+"')");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -51,13 +51,26 @@ public class Constantes {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("pkregistronivel2.pborrarconstante("+codigoConstante+")");
+			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.pborrarconstante('"+codigoConstante+"')");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
+	}
+	public String listar(Connection con) {
+		try 
+		{
+			
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("EXECUTE pkregistronivel2.flistarconstantes");
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "";
 	}
 
 }

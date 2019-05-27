@@ -26,7 +26,7 @@ public class Funcionario {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("pkRegistroNivel2.pregistrarfuncionario("+cedulaFuncionario+","+nombre+","+"TO_DATE("+fechaNacimiento+", 'DD/MM/YYYY'))"+","+direccion+","+telefono+")");
+			ResultSet rs = stmt.executeQuery("EXECUTE pkRegistroNivel2.pregistrarfuncionario('"+cedulaFuncionario+"','"+nombre+"','"+"TO_DATE('"+fechaNacimiento+"', 'DD/MM/YYYY'))"+",'"+direccion+"','"+telefono+"')");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -40,7 +40,7 @@ public class Funcionario {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("pkRegistroNivel2.pactualizarfuncionario("+cedulaFuncionario+","+nombre+","+"TO_DATE("+fechaNacimiento+", 'DD/MM/YYYY'))"+","+direccion+","+telefono+")");
+			ResultSet rs = stmt.executeQuery("EXECUTE pkRegistroNivel2.pactualizarfuncionario('"+cedulaFuncionario+"','"+nombre+"',"+"TO_DATE('"+fechaNacimiento+"', 'DD/MM/YYYY'))"+",'"+direccion+"','"+telefono+"')");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -54,7 +54,7 @@ public class Funcionario {
 		{
 			
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("pkRegistroNivel2.pborrarfuncionario("+cedulaFuncionario+")");
+			ResultSet rs = stmt.executeQuery("EXECUTE pkRegistroNivel2.pborrarfuncionario('"+cedulaFuncionario+"')");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

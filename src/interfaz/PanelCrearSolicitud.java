@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import modelo.ConexionOracle;
+import modelo.Constantes;
 import modelo.Solicitud;
 
 import javax.swing.JComboBox;
@@ -16,6 +17,9 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.awt.event.ActionEvent;
 import java.awt.GridLayout;
 import javax.swing.JRadioButton;
@@ -202,6 +206,15 @@ public class PanelCrearSolicitud extends JFrame {
 		contentPane.add(btnRegistrarSolicitud);
 		
 		
+		try 
+		{
+			ConexionOracle conexion = new ConexionOracle();
+			Connection con = conexion.getConexion();
+			Constantes constantes = new Constantes();
+			
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
 		
 		cmbTipoProducto = new JComboBox();
 		cmbTipoProducto.setEnabled(false);

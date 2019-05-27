@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class Consultas {
 
-	public void solicitudesXFuncionario(Connection con) 
+	public static void solicitudesXFuncionario(Connection con) 
 	{
 		try {
 			Statement stmt = con.createStatement();
@@ -32,12 +32,12 @@ public class Consultas {
 
 	}
 	
-	public void solicitudesXEstado(Connection con) 
+	public static void solicitudesXEstado(Connection con) 
 	{
 		try {
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(
-			"SELECT solicitud.idsolicitud as \"ID_SOLICITUD\", solicitud.estado as \" Estado_Solicitud\""
+			"SELECT solicitud.idsolicitud as \"ID_SOLICITUD\", solicitud.estado as \"Estado_Solicitud\""
 			+"FROM solicitud "
 			+"ORDER BY solicitud.estado"
 					);
@@ -57,7 +57,7 @@ public class Consultas {
 
 	}
 	
-	public void solicitudesXTipo(Connection con) 
+	public static void solicitudesXTipo(Connection con) 
 	{
 		try {
 			Statement stmt = con.createStatement();
@@ -81,7 +81,7 @@ public class Consultas {
 
 	}
 	
-	public void productosXCliente(Connection con) 
+	public static void productosXCliente(Connection con) 
 	{
 		try {
 			Statement stmt = con.createStatement();
@@ -104,6 +104,17 @@ public class Consultas {
 		} 
 
 	}
+	public static void main(String[] args) {
+		ConexionOracle conexion = new ConexionOracle();
+		Connection con = conexion.getConexion();
+		solicitudesXEstado(con);
+		solicitudesXFuncionario(con);
+		solicitudesXTipo(con);
+		productosXCliente(con);
+		
+	}
+	
+
 	
 	
 }

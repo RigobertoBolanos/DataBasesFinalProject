@@ -171,7 +171,10 @@ public class InterfazPrincipal {
 					"        REFERENCES prodcli ( codigoproducto )");
 			
 			//REGISTRO DE CONSTANTES INICIALES
+			
+			
 			Constantes constantes = new Constantes();
+				
 			constantes.insertar(con, "01", "PENDIENTE", "PENDIENTE");
 			constantes.insertar(con, "02", "ASIGNADA", "ASIGNADA");
 			constantes.insertar(con, "03", "ATENDIDA", "ATENDIDA");
