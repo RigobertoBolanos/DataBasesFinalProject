@@ -8,6 +8,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextPane;
+
+import modelo.ConexionOracle;
+
 import java.awt.Panel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -18,6 +21,7 @@ public class PanelPrincipal {
 	private PanelCliente panelcliente;
 	private PanelFuncionario panelfuncionario;
 	private PanelProducto panelproducto;
+	private ConexionOracle conexion;
 	
 	private PanelAtencionPrincipal atencion;
 
@@ -48,6 +52,7 @@ public class PanelPrincipal {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		conexion=new ConexionOracle();
 		frmProyectoBasesDe = new JFrame();
 		frmProyectoBasesDe.setTitle("Proyecto Bases de Datos");
 		frmProyectoBasesDe.setBounds(100, 100, 412, 251);
@@ -116,7 +121,7 @@ public class PanelPrincipal {
 		JButton btnConsultas = new JButton("Consultas");
 		btnConsultas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				PanelConsultas consultas=new PanelConsultas();
+				PanelConsultas consultas=new PanelConsultas(conexion);
 				consultas.setVisible(true);
 			}
 		});
