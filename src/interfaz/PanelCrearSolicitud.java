@@ -8,8 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import Tablas.ConexionOracle;
-import Tablas.Solicitud;
+import modelo.ConexionOracle;
+import modelo.Solicitud;
 
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
@@ -214,7 +214,7 @@ public class PanelCrearSolicitud extends JFrame {
 				
 				
 				
-				solicitud.insertar(conexion.getConexion(), txtaObservaciones.getText(), null, txtCedulaCliente.getText().trim(), tipoSolicitud, codigoProducto);
+				solicitud.insertar(conexion.getConexion(), observaciones, "01", cedulaCliente, tipoSolicitud, codigoProducto);
 			}
 		});
 		btnRegistrarSolicitud.setBounds(12, 326, 141, 25);

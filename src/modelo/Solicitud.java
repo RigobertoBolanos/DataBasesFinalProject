@@ -17,11 +17,11 @@ public class Solicitud {
 		}
 	}
 	
-	public void insertar(Connection con, String observaciones, String estado, String cedulaCliente, String tipoSolicitud, String codigoProducto, String idSolicitud)
+	public void insertar(Connection con, String observaciones, String estado, String cedulaCliente, String tipoSolicitud, String codigoProducto)
 	{
 		try 
 		{
-			
+			String idSolicitud = "";
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery("pkRegistroNivel2.pregistrarsolicitud("+observaciones+","+estado+","+cedulaCliente+","+tipoSolicitud+","+codigoProducto+","+idSolicitud+")");
 			
