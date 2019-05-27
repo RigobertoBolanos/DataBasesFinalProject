@@ -32,6 +32,7 @@ public class PanelFuncionario extends JFrame implements ActionListener {
 	/**
 	 * Launch the application.
 	 */
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -44,13 +45,13 @@ public class PanelFuncionario extends JFrame implements ActionListener {
 			}
 		});
 	}
-
+*/
 	/**
 	 * Create the frame.
 	 */
 	public PanelFuncionario() {
 		setTitle("Funcionario");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 367);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

@@ -15,7 +15,9 @@ import java.awt.event.ActionEvent;
 public class PanelPrincipal {
 
 	private JFrame frmProyectoBasesDe;
-	
+	private PanelCliente panelcliente;
+	private PanelFuncionario panelfuncionario;
+	private PanelProducto panelproducto;
 
 	/**
 	 * Launch the application.
@@ -55,14 +57,32 @@ public class PanelPrincipal {
 		frmProyectoBasesDe.getContentPane().add(lblNewLabel);
 		
 		JButton btnTiposDeProducto = new JButton("Tipos de Producto");
+		btnTiposDeProducto.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panelproducto = new PanelProducto();
+				panelproducto.setVisible(true);
+			}
+		});
 		btnTiposDeProducto.setBounds(244, 54, 125, 23);
 		frmProyectoBasesDe.getContentPane().add(btnTiposDeProducto);
 		
 		JButton btnNewButton_1 = new JButton("Funcionarios");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panelfuncionario = new PanelFuncionario();
+				panelfuncionario.setVisible(true);
+			}
+		});
 		btnNewButton_1.setBounds(24, 88, 125, 23);
 		frmProyectoBasesDe.getContentPane().add(btnNewButton_1);
 		
 		JButton btnNewButton = new JButton("Clientes");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				panelcliente = new PanelCliente();
+				panelcliente.setVisible(true);
+			}
+		});
 		btnNewButton.setBounds(24, 54, 124, 23);
 		frmProyectoBasesDe.getContentPane().add(btnNewButton);
 		
