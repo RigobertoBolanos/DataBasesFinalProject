@@ -1,6 +1,6 @@
 CREATE OR REPLACE PACKAGE pkAtencion AS -- spec
-FUNCTION pAtenderNuevo(ivCodigoSolicitud VARCHAR2, ivCedulaFuncionario VARCHAR2, ivCodigoNuevoProducto NUMBER) return VARCHAR2;
-PROCEDURE pAtenderRetiro (ivCodigoSolicitud VARCHAR2, ivCedulaFuncionario VARCHAR2, ivCodigoNuevoProducto NUMBER);
+FUNCTION pAtenderNuevo(ivCodigoSolicitud VARCHAR2, ivCedulaFuncionario VARCHAR2, ivCodigoNuevoProducto NUMBER, ivComentarios VARCHAR2) return VARCHAR2;
+PROCEDURE pAtenderRetiro (ivCodigoSolicitud VARCHAR2, ivCedulaFuncionario VARCHAR2, ivComentarios VARCHAR2);
 PROCEDURE pAtenderDanoReclamo(ivCodigoSolicitud VARCHAR2, ivCedulaFuncionario VARCHAR2, ivTipo VARCHAR2, ivRespuestaFuncionario VARCHAR2, ivObservaciones VARCHAR2);
 
 END pkAtencion;
@@ -8,9 +8,9 @@ END pkAtencion;
 
 CREATE OR REPLACE PACKAGE BODY pkAtencion AS -- body
 
--- Implementación Procedimiento 1
+-- ImplementaciÃ³n Procedimiento 1
 FUNCTION pAtenderNuevo
-(ivCodigoSolicitud VARCHAR2, ivCedulaFuncionario VARCHAR2, ivCodigoNuevoProducto NUMBER) return VARCHAR2
+(ivCodigoSolicitud VARCHAR2, ivCedulaFuncionario VARCHAR2, ivCodigoNuevoProducto NUMBER, ivComentarios VARCHAR2) return VARCHAR2
 IS
 Vproducto VARCHAR2(20);
 VcedulaCliente VARCHAR2(20);
@@ -48,6 +48,10 @@ BEGIN
     set solicitud.estado = 'atendida'
     where solicitud.idsolicitud = ivCodigoSolicitud;
     
+    update solicitud
+    set solicitud.observaciones = ivComentarios
+    where solicitud.idsolicitud = ivCodigoSolicitud;
+    
     RETURN 'Nuevo registro creado';
     
     /*Maneja las excepciones*/
@@ -59,7 +63,7 @@ BEGIN
 END pAtenderNuevo;
 
 PROCEDURE pAtenderRetiro
-(ivCodigoSolicitud VARCHAR2, ivCedulaFuncionario VARCHAR2, ivCodigoNuevoProducto NUMBER)
+(ivCodigoSolicitud VARCHAR2, ivCedulaFuncionario VARCHAR2, ivComentarios VARCHAR2)
 IS
 VcedulaCliente VARCHAR2(20);
 Vproducto NUMBER(8);
@@ -81,6 +85,10 @@ BEGIN
     set solicitud.estado = 'atendida'
     where solicitud.idsolicitud = ivCodigoSolicitud;
     
+    update solicitud
+    set solicitud.observaciones = ivComentarios
+    where solicitud.idsolicitud = ivCodigoSolicitud;
+    
 END pAtenderRetiro;
 
 PROCEDURE pAtenderDanoReclamo
@@ -89,7 +97,7 @@ PROCEDURE pAtenderDanoReclamo
 IS
 BEGIN
 
-    IF ivTipo = 'dano' THEN
+    IF ivTipo = 'reclamo' THEN
         update solicitud
         set solicitud.estado = ivRespuestaFuncionario, solicitud.observaciones = ivObservaciones
         where solicitud.idsolicitud = ivCodigoSolicitud;
