@@ -4,7 +4,10 @@ import java.sql.*;
 
 public class Cliente {
 	
-	
+	/**
+	 * Elimina la tabla de clientes
+	 * @param con es la conexion con la base de datos
+	 */
 	public void dropTable(Connection con)
 	{
 		try
@@ -19,6 +22,15 @@ public class Cliente {
 		}
 	}
 	
+	/**
+	 * Inserta un cliente en la tabla clientes
+	 * @param con la conexion con la base de datos
+	 * @param cedulaCliente la cedula del cliente
+	 * @param nombre el nombre del cliente
+	 * @param fechaNacimiento la fecha de nacimiento del cliente
+	 * @param direccion la direccion del cliente
+	 * @param telefono el telefono del cliente
+	 */
 	public void insertar(Connection con,String cedulaCliente,String nombre,String fechaNacimiento,String direccion, String telefono	)
 	{
 		try 
@@ -33,6 +45,16 @@ public class Cliente {
 		}
 		
 	}
+	
+	/**
+	 * Actualiza un cliente en la tabla clientes
+	 * @param con la conexion con la base de datos
+	 * @param cedulaCliente la cedula a actualizar
+	 * @param nombre el nombrea a actualizar
+	 * @param fechaNacimiento la fecha de nacimiento a actualizar
+	 * @param direccion la direccion a actualizar
+	 * @param telefono el telefono a actualizar
+	 */
 	public void actualizar(Connection con,String cedulaCliente,String nombre,String fechaNacimiento,String direccion, String telefono)
 	{
 		try 
@@ -47,6 +69,12 @@ public class Cliente {
 		}
 		
 	}
+	
+	/**
+	 * Borra un cliente de la tabla clientes
+	 * @param con la conexion con la base de datos
+	 * @param cedulaCliente la cedula del cliente a borrar
+	 */
 	public void borrar(Connection con,String cedulaCliente)
 	{
 		try 

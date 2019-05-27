@@ -6,6 +6,9 @@ public class ConexionOracle {
 	
 	private Connection conexion;
 	
+	/**
+	 * Crea la conexion con la base de datos
+	 */
 	public ConexionOracle()
 	{
 		try 

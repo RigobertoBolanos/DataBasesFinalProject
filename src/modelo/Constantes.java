@@ -18,6 +18,10 @@ public class Constantes {
 	public static final String RECLAMO = "24";
 	public static final String DANIO = "25";
 
+	/**
+	 * Elimina la tabla Constantes
+	 * @param con
+	 */
 	public void dropTable(Connection con) 
 	{
 		try 
@@ -33,6 +37,13 @@ public class Constantes {
 		}
 	}
 	
+	/**
+	 * Inserta una nueva constante en la tabla
+	 * @param con es la conexion con la base de datos
+	 * @param codigoConstante es el codigo de la constante a insertar
+	 * @param nombreConstante es el nombre de la constante
+	 * @param valor es el valor de la constante
+	 */
 	public void insertar(Connection con, String codigoConstante, String nombreConstante, String valor) {
 		try 
 		{
@@ -46,6 +57,14 @@ public class Constantes {
 		}
 		
 	}
+	
+	/**
+	 * Actualiza una constante en la tabla
+	 * @param con es la conexion con la base de datos
+	 * @param codigoConstante es el nuevo codigo de la constante
+	 * @param nombreConstante es el nuevo nombre de la constante
+	 * @param valor es el nuevo valor de la constante
+	 */
 	public void actualizar(Connection con, String codigoConstante, String nombreConstante, String valor) {
 		try 
 		{
@@ -59,6 +78,12 @@ public class Constantes {
 		}
 		
 	}
+	
+	/**
+	 * Borra una constante de la tabla
+	 * @param con es la conexion con la base de datos
+	 * @param codigoConstante es el codigo de la constante a borrar
+	 */
 	public void borrar(Connection con, String codigoConstante) {
 		try 
 		{
@@ -72,6 +97,12 @@ public class Constantes {
 		}
 		
 	}
+	
+	/**
+	 * Lista las constantes en las tablas 
+	 * @param con es la conexion con la base de datos
+	 * @return la lista de las constantes
+	 */
 	public String listar(Connection con) {
 		try 
 		{
