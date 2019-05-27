@@ -44,14 +44,13 @@ public class PanelCrearSolicitud extends JFrame {
 	 */
 	public PanelCrearSolicitud() {
 		setTitle("Registro de Solicitudes");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 464, 411);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		rdbtnCreacin = new JRadioButton("Creaci\u00F3n");
+		rdbtnCreacin = new JRadioButton(Constantes.CREACION);
 		rdbtnCreacin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
@@ -70,7 +69,7 @@ public class PanelCrearSolicitud extends JFrame {
 		rdbtnCreacin.setBounds(12, 32, 79, 25);
 		contentPane.add(rdbtnCreacin);
 		
-		rdbtnModificacin = new JRadioButton("Modificaci\u00F3n");
+		rdbtnModificacin = new JRadioButton(Constantes.MODIFICACION);
 		rdbtnModificacin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
@@ -89,7 +88,7 @@ public class PanelCrearSolicitud extends JFrame {
 		rdbtnModificacin.setBounds(95, 32, 99, 25);
 		contentPane.add(rdbtnModificacin);
 		
-		rdbtnCancelacin = new JRadioButton("Cancelaci\u00F3n");
+		rdbtnCancelacin = new JRadioButton(Constantes.CANCELACION);
 		rdbtnCancelacin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -108,7 +107,7 @@ public class PanelCrearSolicitud extends JFrame {
 		rdbtnCancelacin.setBounds(198, 32, 99, 25);
 		contentPane.add(rdbtnCancelacin);
 		
-		rdbtnDao = new JRadioButton("Da\u00F1o");
+		rdbtnDao = new JRadioButton(Constantes.DANIO);
 		rdbtnDao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -127,7 +126,7 @@ public class PanelCrearSolicitud extends JFrame {
 		rdbtnDao.setBounds(301, 32, 57, 25);
 		contentPane.add(rdbtnDao);
 		
-		rdbtnReclamo = new JRadioButton("Reclamo");
+		rdbtnReclamo = new JRadioButton(Constantes.RECLAMO);
 		rdbtnReclamo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -194,11 +193,26 @@ public class PanelCrearSolicitud extends JFrame {
 				String observaciones = txtaObservaciones.getText();
 				String cedulaCliente = txtCedulaCliente.getText().trim();
 				String codigoProducto = txtCodigoProducto.getText().trim();
-
-				
-				
-				
-				
+				if(rdbtnCancelacin.isSelected())
+				{
+					tipoSolicitud = rdbtnCancelacin.getText();
+				}
+				else if(rdbtnCreacin.isSelected())
+				{
+					tipoSolicitud = rdbtnCreacin.getText();
+				}
+				else if(rdbtnDao.isSelected())
+				{
+					tipoSolicitud = rdbtnDao.getText();
+				}
+				else if(rdbtnModificacin.isSelected())
+				{
+					tipoSolicitud = rdbtnModificacin.getText();
+				}
+				else if(rdbtnReclamo.isSelected())
+				{
+					tipoSolicitud = rdbtnReclamo.getText();
+				}
 				solicitud.insertar(conexion.getConexion(), observaciones, "01", cedulaCliente, tipoSolicitud, codigoProducto);
 			}
 		});
@@ -218,7 +232,7 @@ public class PanelCrearSolicitud extends JFrame {
 		
 		cmbTipoProducto = new JComboBox();
 		cmbTipoProducto.setEnabled(false);
-		cmbTipoProducto.setModel(new DefaultComboBoxModel(new String[] {"VOZ", "DATOS", "INTEGRADO"}));
+		cmbTipoProducto.setModel(new DefaultComboBoxModel(new String[] {Constantes.VOZ, Constantes.DATOS, Constantes.INTEGRADO}));
 		cmbTipoProducto.setBounds(143, 164, 116, 22);
 		contentPane.add(cmbTipoProducto);
 		
