@@ -18,6 +18,8 @@ public class PanelPrincipal {
 	private PanelCliente panelcliente;
 	private PanelFuncionario panelfuncionario;
 	private PanelProducto panelproducto;
+	
+	private PanelAtencionPrincipal atencion;
 
 	/**
 	 * Launch the application.
@@ -100,9 +102,12 @@ public class PanelPrincipal {
 		JButton btnNewButton_2 = new JButton("Atender Solicitud");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				/*
 				PanelAtencion atencion=new PanelAtencion();
 				atencion.setVisible(true);
-				
+				*/
+				atencion = new PanelAtencionPrincipal();
+				atencion.setVisible(true);
 			}
 		});
 		btnNewButton_2.setBounds(24, 122, 125, 23);
