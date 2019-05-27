@@ -16,7 +16,7 @@ public class Constantes {
 	public static final String MODIFICACION = "22";
 	public static final String CANCELACION = "23";
 	public static final String RECLAMO = "24";
-	public static final String DAÑO = "25";
+	public static final String DANIO = "25";
 
 	public void dropTable(Connection con) 
 	{
