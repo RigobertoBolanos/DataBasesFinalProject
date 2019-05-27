@@ -43,7 +43,7 @@ public class PanelPrincipal {
 	private void initialize() {
 		frmProyectoBasesDe = new JFrame();
 		frmProyectoBasesDe.setTitle("Proyecto Bases de Datos");
-		frmProyectoBasesDe.setBounds(100, 100, 412, 179);
+		frmProyectoBasesDe.setBounds(100, 100, 412, 251);
 		frmProyectoBasesDe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmProyectoBasesDe.getContentPane().setLayout(null);
 		
@@ -66,9 +66,21 @@ public class PanelPrincipal {
 		JButton btnCrearSolicitud = new JButton("Crear Solicitud");
 		btnCrearSolicitud.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 			}
 		});
 		btnCrearSolicitud.setBounds(244, 88, 125, 23);
 		frmProyectoBasesDe.getContentPane().add(btnCrearSolicitud);
+		
+		JButton btnNewButton_2 = new JButton("Atender Solicitud");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
+		btnNewButton_2.setBounds(24, 122, 125, 23);
+		frmProyectoBasesDe.getContentPane().add(btnNewButton_2);
 	}
+	
+	
 }
