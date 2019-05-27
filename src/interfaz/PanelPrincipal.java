@@ -65,7 +65,10 @@ public class PanelPrincipal {
 		
 		JButton btnCrearSolicitud = new JButton("Crear Solicitud");
 		btnCrearSolicitud.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				PanelCrearSolicitud panelCrearSolicitud = new PanelCrearSolicitud();
+				panelCrearSolicitud.setVisible(true);
 			}
 		});
 		btnCrearSolicitud.setBounds(244, 88, 125, 23);
